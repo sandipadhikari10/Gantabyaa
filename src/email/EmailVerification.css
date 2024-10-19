@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.email-verification-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #D38561, #A56043);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.email-verification-box {
+    background-color: white;
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+    position: relative;
+    /* border: 1px solid; */
+}
+
+.back-arrow {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-size: 1.5rem;
+    color: #333;
+    text-decoration: none;
+}
+
+h2 {
+    margin-bottom: 1rem;
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+p {
+    margin-bottom: 1.5rem;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.code-inputs {
+    display: flex;
+    justify-content: space-between;
+   
+    margin: 5px 5px;
+    border: 1px solid black;
+}
+
+.code-inputs input {
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    font-size: 1.5rem;
+    border: 3px solid black;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.code-inputs input:focus {
+    border-color: #D38561;
+}
+
+.continue-btn {
+    background-color: #D38561;
+    color: white;
+    border: none;
+    padding: 12px 0;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+.continue-btn:hover {
+    background-color: #c5846a;
+}

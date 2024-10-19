@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+
+body{
+  height: 100%; /* Make sure the body and html take the full height of the screen */
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+/* Center the form */
+.login-container {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to bottom, #D38561, #A56043);
+  background-size: cover; 
+  background-repeat: no-repeat;
+  
+  
+}
+.input-name{
+  border: none;
+  border-bottom: 3px solid hsla(0, 0%, 0%, 0.101);
+  
+ 
+}
+
+.login-box {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+h2 {
+  margin-bottom: 2rem;
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.form-login{
+  display: flex;
+  flex-direction: column;
+ 
+  padding: 40px;
+
+}
+/* .input-group {
+  margin-bottom: 20px;
+  text-align: left;
+} */
+
+input[type="text"], input[type="email"], input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  background: none;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+input:focus {
+  border-bottom: 2px solid #D38561;
+}
+
+
+label {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  color: #666;
+  display: block;
+}
+
+
+
+.password-field {
+  position: relative;
+  width: 100%;
+}
+
+.password-field input {
+  width: 100%;
+  padding: 10px;
+   /* Add space for the eye icon */
+  margin-bottom: 15px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  background: none;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.password-field input:focus {
+  border-bottom: 2px solid #D38561;
+}
+
+
+
+
+.toggle-password {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.forgot-password {
+  margin: 20px 0;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.forgot-password a {
+  text-decoration: none;
+  color: #d49a7d;
+  font-size: 0.85rem;
+}
+
+/* .sign-in-btn {
+  width: 250px;
+  font-weight: bold;
+  background-color: #D38561;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 50px;
+  margin-left: 100px;
+  transition: background-color 0.3s;
+} */
+
+.sign-in-btn {
+  background-color: #D38561;
+  color: white;
+  border: none;
+  padding: 12px 0;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+.sign-in-btn:hover {
+  background-color: #bb8367;
+}
+
+.alternative-sign-in {
+  margin: 20px 0;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+}
+
+.google-btn, .apple-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  margin: 0 5px;
+}
+
+.sign-up {
+  margin-top: 20px;
+}
+
+.sign-up a {
+  color: #d49a7d;
+  text-decoration: none;
+}
+.google-Icon
+{
+  width: '20px';
+  height: 20px;
+  margin-top: 4px;
+  margin-right: '8px';
+  
+  margin-left: 0px;
+  
+}

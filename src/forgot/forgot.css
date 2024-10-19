@@ -1,0 +1,91 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.forgot-password-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #D38561, #A56043);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.forgot-password-box {
+    background-color: white;
+    padding:  40px 90px;
+    border-radius: 20px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+    
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+    position: relative;
+   
+    min-height: 500px;
+}
+
+.back-arrow {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-size: 1.5rem;
+    color: #333;
+    text-decoration: none;
+}
+
+.h2-forgot{
+    margin-bottom: 1rem;
+    
+    color: #333;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.para-forgot {
+    margin-bottom: 1.5rem;
+    color: #555;
+    font-size: 1rem;
+}
+
+.form-forgot {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    background: none;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input[type="email"]:focus {
+    border-bottom: 2px solid #D38561;
+}
+
+.recover-btn {
+    background-color: #D38561;
+    color: white;
+    border: none;
+    padding: 12px 0;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-top: 40px
+}
+
+.recover-btn:hover {
+    background-color: #c5846a;
+}

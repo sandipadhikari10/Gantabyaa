@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+
+body{
+     height: 100%; /* Make sure the body and html take the full height of the screen */
+    margin: 0;
+     padding: 0;
+    font-family: 'Poppins', sans-serif;
+    
+}
+  
+  .signup-container {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #D38561, #A56043);
+    background-size: cover; 
+    background-repeat: no-repeat;
+    
+  }
+  .input-name{
+    border: none;
+    border-bottom: 3px solid hsla(0, 0%, 0%, 0.101);
+    
+   
+  }
+  
+  .signup-box {
+    background-color: white;
+    padding:  2rem;
+    border-radius: 20px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+   
+  }
+  
+  h2 {
+    margin-bottom: 2rem;
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .form-signup {
+    display: flex;
+    flex-direction: column;
+   
+    padding: 25px;
+  }
+  
+  input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    background: none;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  input:focus {
+    border-bottom: 2px solid #D38561;
+  }
+  
+
+
+  .password-field {
+    position: relative;
+    width: 100%;
+  }
+  
+  .password-field input {
+    width: 100%;
+    padding: 10px;
+     /* Add space for the eye icon */
+    margin-bottom: 15px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    background: none;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .password-field input:focus {
+    border-bottom: 2px solid #D38561;
+  }
+
+
+
+  .checkbox-field {
+    display: flex;
+    align-items: start;
+    
+    margin: 10px 0;
+    
+  }
+  .agree-input{
+    cursor: pointer;
+    
+  }
+  
+  /* .agree-input{
+    display: inline;
+    border: 1px solid;
+    
+} */
+
+  .checkbox-field input {
+    transform: scale(1.2);
+  }
+  .checkbox-field label {
+    cursor: pointer; 
+    font-size: 0.9rem; 
+  }
+  
+  .signup-btn {
+    background-color: #D38561;
+    color: white;
+    border: none;
+    padding: 12px 0;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-top: 1.5rem;
+  }
+  
+  .signup-btn:hover {
+    background-color: #c5846a;
+  }
+  
+  .existing-account {
+    margin-top: 1.5rem;
+    color: #333;
+    font-size: 0.9rem;
+  }
+  
+  .exist-acc {
+    color: #d49a7d;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .exist-acc :hover {
+    text-decoration: underline;
+  }
+  
+
+
+
+
+  
+  
+  .toggle-password {
+    position: absolute;
+    right: 10px; /* Position it at the right side of the input */
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #999;
+  }
+  
+  .toggle-password:hover {
+    color: #666;
+  }
+  
