@@ -1,0 +1,105 @@
+/* CarList.css */
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  .carlist-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1em;
+  }
+  
+  .carlist-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 0;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .carlist-header h1 {
+    font-size: 1.8em;
+    color: #333;
+  }
+  
+  .carlist-header nav a {
+    margin: 0 1em;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .car-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5em;
+    padding: 1.5em 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1em;
+  }
+  
+  .car-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+  }
+  
+  .car-card:hover {
+    transform: scale(1.02);
+  }
+  
+  .car-image {
+    width: 100%;
+    height: 220px;
+  }
+  
+  .car-details {
+    padding: 1em;
+  }
+  
+  .car-details h3 {
+    font-size: 1.2em;
+    margin: 0;
+  }
+  
+  .car-details p {
+    margin: 0.5em 0;
+    color: #555;
+  }
+  
+  .car-price {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .carlist-footer {
+    margin-top: 2em;
+    background-color: #111;
+    color: #fff;
+    padding: 2em 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .footer-info p {
+    margin: 0.5em 0;
+  }
+  
+  .footer-links a {
+    color: #fff;
+    margin: 0.5em;
+    text-decoration: none;
+  }
+  .carpriceRating{
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  

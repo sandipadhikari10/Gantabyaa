@@ -12,7 +12,7 @@ function EmailVerification() {
     newCode[index] = element.value;
     setCode(newCode);
 
-    // Move to next input field automatically
+    
     if (element.nextSibling && element.value !== "") {
       element.nextSibling.focus();
     }

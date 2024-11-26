@@ -11,8 +11,8 @@ const Login = () => {
    
     <div className="login-container">
         
+        
       <div className="login-box">
-        <h2>Sign In</h2>
         <form className='form-login'>
           <div className="input-group">
             <input className='input-name' type="text" placeholder="Email or phone number" required />

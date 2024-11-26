@@ -1,0 +1,22 @@
+.banner {
+    background-image: url('/src/assets/logo/bgimage.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+  }
+  
+  .banner-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .banner-content h1 {
+    color: white;
+    font-size: 4rem;
+    text-align: center;
+  }
+  

@@ -1,0 +1,52 @@
+/* Main container styling */
+.bike-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    padding-left: 190px;
+    padding-right: 190px;
+    
+   
+    background-color: #f9f9f9;
+  }
+  
+  /* Card styling */
+  .bike-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    padding: 10px;
+  }
+  .bike-card:hover {
+    transform: scale(1.02);
+  }
+  
+  
+  /* Image styling */
+  .bike-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Bike name styling */
+  .bike-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  /* Rating and price styling */
+  .bike-rating,
+  .bike-price {
+    font-size: 1rem;
+    color: #555;
+  }
+  .bikepriceRating{
+    display: flex;
+    justify-content: flex-end;
+  }
+  
