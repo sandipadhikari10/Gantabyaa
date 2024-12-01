@@ -1,23 +1,35 @@
-import React from 'react';
+import { Link } from "react-router-dom";
+import hondacrf from '../assets/bikes/crf.jpg';
+import bikeData from "./bikeData";
+import Navbar from "../landingpage/Navbar";
+import Footer from "../landingpage/Footer";
 import './BikeList.css';
-import bikeData from './bikeData';
 
 
-const BikeList = () => {
-  return (
-    <div className="bike-list">
-      {bikeData.map((bike, index) => (
-        <div className="bike-card" key={index}>
-          <img src={bike.image} alt={bike.name} className="bike-image" />
-          <h3 className="bike-name">{bike.name}</h3>
-          <p className="bike-rating">⭐ {bike.rating} ({bike.trips} trips)</p>
-          <div className='bikepriceRating'>
-          <span className="bike-price">Rs. {bike.price} per day</span>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-};
 
-export default BikeList;
+
+    
+  // Add more vehicles
+
+
+const VehicleList = () => (
+ <>
+ <Navbar/>
+  <div className="bike-list">
+    {bikeData.map((vehicle) => (
+      <div key={vehicle.id}>
+        
+      
+        <Link to={`/vehicle/${vehicle.id}`}>
+          <h3>{vehicle.name}</h3>
+          <img src={vehicle.image} alt={vehicle.name} className="vehicle-image" />
+        </Link>
+      </div>
+    ))}
+  </div>
+  <Footer/>
+  </>
+ 
+);
+
+export default VehicleList;

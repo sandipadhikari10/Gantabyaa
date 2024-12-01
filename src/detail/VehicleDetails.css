@@ -1,60 +1,59 @@
-.vehicle-details {
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
+.vehicle-detail-container {
+  padding: 20px;
+ 
+  max-width: 1200px;
+  margin-left: 160px;
+  background-color: hsl(26, 100%, 97%);
+  border-radius: 40px;
+}
+
+.detail-header {
+  display: flex;
+  gap: 20px;
+}
+
+.vehicle-image {
+  width: 600px;
+  border-radius: 10px;
+}
+
+.vehicle-info table {
+  margin: 10px 0;
+}
+
+.Location-details
+{
+    width: 300px;
+}
+.pay-btn{
+  background-color: #d49a7d;
+  font-size: 15px;
+  width: 90px;
+  color: white;
+  font-weight: bold;
   
-  .vehicle-info {
-    display: flex;
-    gap: 20px;
-    margin-top: 20px;
-  }
+}
+.pay-btn:hover{
+  cursor: pointer;
+}
+
+.second-item{
+  text-align: center;
+  margin-top: 50px;
   
-  .details ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .details ul li {
-    font-size: 1rem;
-    margin-bottom: 10px;
-  }
-  
-  .location-dates input {
-    display: block;
-    margin-top: 10px;
-    padding: 5px;
-    width: 100%;
-  }
-  
-  .pay-button {
-    background-color: #FF6347;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    margin-top: 20px;
-  }
-  
-  .similar-vehicles {
-    margin-top: 40px;
-  }
-  
-  .vehicle-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
-  }
-  
-  .vehicle-card {
-    text-decoration: none;
-    color: inherit;
-  }
-  
-  .vehicle-card img {
-    width: 100%;
-    border-radius: 8px;
-  }
-  
+}
+
+
+.vehicle-info input,
+.vehicle-info button {
+  margin: 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.crossponding-vehicles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}

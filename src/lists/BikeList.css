@@ -25,11 +25,12 @@
   
   
   /* Image styling */
-  .bike-image {
-    width: 100%;
+  .vehicle-image {
+    width: 400px;
     height: 300px;
     object-fit: cover;
     border-bottom: 1px solid #ddd;
+    gap: 10px;
   }
   
   /* Bike name styling */
@@ -49,4 +50,8 @@
     display: flex;
     justify-content: flex-end;
   }
+  
+
+
+
   

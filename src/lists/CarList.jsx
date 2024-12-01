@@ -1,11 +1,13 @@
 import React from 'react';
 import './CarList.css';
 import carData from './carData'; // Import your car data here, or pass it as props
+import Navbar from '../landingpage/Navbar';
+import Footer from '../landingpage/Footer';
 
 const CarList = () => {
   return (
     
-      
+      <>
       <div className="car-list">
         {carData.map((car, index) => (
           <div key={index} className="car-card">
@@ -20,6 +22,7 @@ const CarList = () => {
           </div>
         ))}
       </div>
+      </>
     
   );
 };

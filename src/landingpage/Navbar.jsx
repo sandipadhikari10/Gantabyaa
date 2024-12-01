@@ -1,6 +1,6 @@
 import React from "react";
 import './Navbar.css';
-import Footer from "./Footer";
+import { Link } from "react-router-dom"
 
 
 const Navbar = () => {
@@ -18,14 +18,18 @@ const Navbar = () => {
     
     <nav className="navbar-second">
       <div>
-        <h2>Gantabya</h2>
+        <h2 className="navbar-header">
+        <Link className="no-underline text-black hover:text-blue-500" aria-current="page" to="/">Gantabya</Link>
+        </h2>
       </div>
     <div className="navbar-links">
     <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href ="/bikes">Bikes</a></li>
-            <li><a href ="/cars">Cars</a></li>
-            <li><a href ="/about">About</a></li>
+            <li className="nav-item">
+              <Link className="nav-link active" aria-current="page" to="/">Home</Link></li>
+              <li className="nav-item"><Link className="nav-link" to="/bikes">Bike</Link></li>
+              <li className="nav-item"><Link className="nav-link"  to="/cars">Cars</Link></li>
+              <li className="nav-item"><Link className="nav-link" to="/aboutus">About us</Link></li>
+              <li className="nav-item"><Link className="nav-link" to="/login">Login/signUp</Link></li>
 
          
             
@@ -40,5 +44,7 @@ const Navbar = () => {
     </>
   );
 };
+  
+
 
 export default Navbar;

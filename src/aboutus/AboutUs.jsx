@@ -1,9 +1,12 @@
 import React from 'react';
 import bikeImage from '../assets/bikes/backgroundimg.png'; 
 import './AboutUs.css';
+import Navbar from '../landingpage/Navbar';
+import Footer from '../landingpage/Footer';
 
 const AboutUs = () => {
   return (
+    <>
     <div className="about-container">
       <div className="about-banner">
         <img src={bikeImage} alt="Bike" className="about-banner-image" />
@@ -30,6 +33,7 @@ const AboutUs = () => {
 
       
     </div>
+  </>
   );
 };
 

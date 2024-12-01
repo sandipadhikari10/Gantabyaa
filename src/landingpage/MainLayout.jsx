@@ -15,10 +15,7 @@ import Login from '../login/Login'
 const MainLayout = () => {
   return (
     <div>
-      <Navbar />
-      
-    <AboutUs/>
-      <Footer />
+
     </div>
   );
 };

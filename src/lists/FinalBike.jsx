@@ -1,11 +1,12 @@
 import React from 'react';
 import './FinalBike.css';
 import bikeData from './bikeData'; // Import your car data here, or pass it as props
+import Navbar from '../landingpage/Navbar';
+import Footer from '../landingpage/Footer';
 
 const FinalBikeList = () => {
   return (
-    
-      
+    <>
       <div className="bike-list">
         {bikeData.map((bike, index) => (
           <div key={index} className="bike-card">
@@ -20,6 +21,7 @@ const FinalBikeList = () => {
           </div>
         ))}
       </div>
+      </>
     
   );
 };

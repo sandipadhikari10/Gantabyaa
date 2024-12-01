@@ -1,60 +1,59 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-// import vehicles from '../data/vehicles'; // Assuming you have vehicle data here
-import vehicles from '..lists/bikeData';
+import React from "react";
+import { useParams } from "react-router-dom";
+import "./VehicleDetails.css";
+import hondacrf from '../assets/bikes/crf.jpg';
+import bikeData from "../lists/bikeData";
 
-const VehicleDetails = () => {
+
+
+ 
+
+
+
+const VehicleDetail = () => {
   const { id } = useParams();
-  const vehicle = vehicles.find((v) => v.id === id);
-  const similarVehicles = vehicles.filter((v) => v.type === vehicle.type && v.id !== vehicle.id);
+  const vehicle = bikeData.find((v) => v.id === parseInt(id));
 
   return (
-    <div className="vehicle-details">
-      <header>
-        <h1>{vehicle.name}</h1>
-        <p>{vehicle.description}</p>
-      </header>
-      
-      <div className="vehicle-info">
-        <img src={vehicle.image} alt={vehicle.name} />
-        
-        <div className="details">
-          <ul>
-            <li><strong>Engine Capacity:</strong> {vehicle.engineCapacity}</li>
-            <li><strong>Tank Capacity:</strong> {vehicle.tankCapacity}</li>
-            <li><strong>Mileage:</strong> {vehicle.mileage}</li>
-            <li><strong>Gears:</strong> {vehicle.gears}</li>
-            <li><strong>Brake:</strong> {vehicle.brake}</li>
-            <li><strong>Insurance:</strong> {vehicle.insurance}</li>
-          </ul>
-          
-          <div className="location-dates">
+    <>
+    <div className="vehicle-detail-container">
+    {/* <h1>{vehicle.name}</h1> */}
+     
+      <div className="detail-header">
+        <img src={vehicle.image} alt={vehicle.name} className="vehicle-image" />
+        <div className="vehicle-info">
+          <h1>{vehicle.name}</h1>
+          <p>{vehicle.type}</p>
+          <table>
+            <tbody>
+              <tr><td>Engine Capacity:</td>{""}<td>{vehicle.details.engine}</td></tr>
+              <tr><td>Tank Capacity:</td><td>{vehicle.details.tank}</td></tr>
+              <tr><td>Mileage:</td><td>{vehicle.details.mileage}</td></tr>
+              <tr><td>Gears:</td><td>{vehicle.details.gears}</td></tr>
+              <tr><td>Brake:</td><td>{vehicle.details.brake}</td></tr>
+              <tr><td>Insurance:</td><td>{vehicle.details.insurance}</td></tr>
+            </tbody>
+          </table>
+          <div className="Location-details">
             <input type="text" placeholder="Location" />
             <input type="date" placeholder="Pick Up Date" />
-            <input type="date" placeholder="Drop Off Date" />
+            <input type="date" placeholder="Drop Off Date"/>
+            <button className="pay-btn">Pay</button>
           </div>
-          
-          <button className="pay-button">Pay</button>
         </div>
       </div>
 
-      <section className="similar-vehicles">
-        <h2>Corresponding Vehicles</h2>
-        <div className="vehicle-grid">
-          {similarVehicles.map((v) => (
-            <Link to={`/vehicles/${v.id}`} key={v.id} className="vehicle-card">
-              <img src={v.image} alt={v.name} />
-              <div className="vehicle-info">
-                <h3>{v.name}</h3>
-                <p>Rs. {v.price} per day</p>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
-    </div>
+      </div>
+      <h2 className="second-item">Corresponding Vehicles</h2>
+      <p>We understand if this vehicle isn't the perfect fit  you're more than welcome to browse and 
+      select another option that better suits your journey."</p>;
+      <div className="corresponding-vehicles">
+     
+      </div>
+    
+
+    </>
   );
 };
 
-export default VehicleDetails;
+export default VehicleDetail;
