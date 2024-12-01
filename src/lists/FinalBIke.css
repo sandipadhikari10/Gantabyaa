@@ -17,9 +17,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 1em;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1em;
+  
   }
   
   .bike-card {
@@ -36,7 +34,7 @@ body {
   
   .bike-image {
     width: 100%;
-    height: 220px;
+    height: 230px;
   }
   
   .bike-details {
@@ -60,9 +58,5 @@ body {
   
   
   
-  .bikepriceRating{
-    display: flex;
-    justify-content: flex-end;
-  }
   
   

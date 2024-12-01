@@ -1,9 +1,12 @@
 import React from 'react';
 import backgroundImage from '../assets/logo/pokhara.png';
 import './Home.css';
+import FinalBikeList from '../lists/FinalBike';
+import CarList from '../lists/CarList';
 
 const Home = () => {
   return (
+    <>
     <div className="search-container">
       {/* Background Image */}
       <img src={backgroundImage} alt="Background" className="bg-image" />
@@ -43,7 +46,12 @@ const Home = () => {
         </div>
       </div>
     </div>
+</>
   );
+
 };
+<FinalBikeList/>
+
+
 
 export default Home;

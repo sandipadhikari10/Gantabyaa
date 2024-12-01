@@ -9,6 +9,7 @@ const bikeData = [
      name: "Honda Shine 1",
      image: hondashine,
      type: "Old Classic bike",
+     price: 1200,
      details: {
        engine: "125 cc",
        tank: "12 liters",
@@ -25,6 +26,7 @@ const bikeData = [
      name: "Himalaya 2",
      image: himalayan,
      type: "Old Classic bike",
+     price: 1200,
      details: {
        engine: "125 cc",
        tank: "12 liters",
@@ -32,7 +34,7 @@ const bikeData = [
        gears: "5 gear",
        brake: "Dual drum",
        insurance: "Third party",
-       price: 1200,
+      
      }
         
       },
@@ -40,6 +42,7 @@ const bikeData = [
         id: 3,
      name: "Honda Rally 3",
      image: hondashine,
+     price: 1200,
      
      type: "Old Classic bike",
      details: {
@@ -57,6 +60,7 @@ const bikeData = [
         id: 4,
      name: "Honda Shine 4",
      image: hondashine,
+     price: 1200,
      
      type: "Old Classic bike",
      details: {
@@ -75,6 +79,7 @@ const bikeData = [
      image: hondashine,
      
      type: "Old Classic bike",
+     price: 1200,
      details: {
        engine: "125 cc",
        tank: "12 liters",
@@ -90,6 +95,7 @@ const bikeData = [
         id: 6,
      name: "Honda Shine 6",
      image: hondashine,
+     price: 1200,
      
      type: "Old Classic bike",
      details: {
@@ -106,6 +112,7 @@ const bikeData = [
         id: 7,
      name: "Yamaha 7",
      image: hondacrf,
+     price: 1200,
      
      type: "Old Classic bike",
      details: {

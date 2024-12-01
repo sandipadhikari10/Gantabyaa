@@ -5,31 +5,11 @@ body {
     color: #333;
   }
   
-  .carlist-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1em;
-  }
   
-  .carlist-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1em 0;
-    border-bottom: 1px solid #ccc;
-  }
   
-  .carlist-header h1 {
-    font-size: 1.8em;
-    color: #333;
-  }
-  
-  .carlist-header nav a {
-    margin: 0 1em;
-    color: #333;
-    text-decoration: none;
-    font-weight: bold;
-  }
+
+ 
+ 
   
   .car-list {
     display: grid;
@@ -39,6 +19,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 1em;
+
   }
   
   .car-card {
@@ -51,6 +32,7 @@ body {
   
   .car-card:hover {
     transform: scale(1.02);
+    cursor: pointer;
   }
   
   .car-image {
@@ -76,30 +58,7 @@ body {
     font-weight: bold;
     color: #333;
   }
+ 
   
-  .carlist-footer {
-    margin-top: 2em;
-    background-color: #111;
-    color: #fff;
-    padding: 2em 1em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .footer-info p {
-    margin: 0.5em 0;
-  }
-  
-  .footer-links a {
-    color: #fff;
-    margin: 0.5em;
-    text-decoration: none;
-  }
-  .carpriceRating{
-    display: flex;
-    justify-content: flex-end;
-  }
   
   

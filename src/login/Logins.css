@@ -1,13 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
-
-body{
-  height: 100%; /* Make sure the body and html take the full height of the screen */
+body {
+  height: 100%;
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
 }
-
 
 /* Center the form */
 .login-container {
@@ -16,16 +14,14 @@ body{
   align-items: center;
   height: 80vh;
   background: linear-gradient(to bottom, #D38561, #A56043);
-  background-size: cover; 
+  background-size: cover;
   background-repeat: no-repeat;
-  
-  
+  padding: 0 20px; /* Add padding for smaller screens */
 }
-.input-name{
+
+.input-name {
   border: none;
   border-bottom: 3px solid hsla(0, 0%, 0%, 0.101);
-  
- 
 }
 
 .login-box {
@@ -46,19 +42,15 @@ h2 {
   font-weight: bold;
 }
 
-.form-login{
+.form-login {
   display: flex;
   flex-direction: column;
- 
   padding: 20px;
-
 }
-/* .input-group {
-  margin-bottom: 20px;
-  text-align: left;
-} */
 
-input[type="text"], input[type="email"], input[type="password"] {
+input[type="text"],
+input[type="email"],
+input[type="password"] {
   width: 100%;
   padding: 9px;
   margin-bottom: 13px;
@@ -69,19 +61,10 @@ input[type="text"], input[type="email"], input[type="password"] {
   outline: none;
   transition: border-color 0.3s ease;
 }
+
 input:focus {
   border-bottom: 2px solid #D38561;
 }
-
-
-label {
-  font-size: 0.9rem;
-  margin-bottom: 5px;
-  color: #666;
-  display: block;
-}
-
-
 
 .password-field {
   position: relative;
@@ -91,7 +74,6 @@ label {
 .password-field input {
   width: 100%;
   padding: 10px;
-   /* Add space for the eye icon */
   margin-bottom: 15px;
   border: none;
   border-bottom: 2px solid #ccc;
@@ -104,9 +86,6 @@ label {
 .password-field input:focus {
   border-bottom: 2px solid #D38561;
 }
-
-
-
 
 .toggle-password {
   position: absolute;
@@ -128,21 +107,6 @@ label {
   color: #d49a7d;
   font-size: 0.85rem;
 }
-
-/* .sign-in-btn {
-  width: 250px;
-  font-weight: bold;
-  background-color: #D38561;
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
-  border-radius: 50px;
-  margin-left: 100px;
-  transition: background-color 0.3s;
-} */
 
 .sign-in-btn {
   background-color: #D38561;
@@ -170,7 +134,8 @@ label {
   justify-content: center;
 }
 
-.google-btn, .apple-btn {
+.google-btn,
+.apple-btn {
   border: none;
   background: none;
   cursor: pointer;
@@ -186,13 +151,44 @@ label {
   color: #d49a7d;
   text-decoration: none;
 }
-.google-Icon
-{
-  width: '20px';
+
+.google-Icon {
+  width: 20px;
   height: 20px;
   margin-top: 4px;
-  margin-right: '8px';
-  
-  margin-left: 0px;
-  
+  margin-right: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .login-container {
+    height: auto; /* Allow content to adjust dynamically */
+    padding: 20px; /* Add padding around the container */
+  }
+
+  .login-box {
+    max-width: 90%; /* Reduce width for smaller screens */
+    padding: 1rem;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    padding: 8px;
+    font-size: 0.9rem; /* Reduce font size for smaller screens */
+  }
+
+  .sign-in-btn {
+    font-size: 0.9rem; /* Adjust button size */
+    padding: 10px 0;
+  }
+
+  .social-icons {
+    flex-direction: column; /* Stack social buttons vertically */
+    gap: 10px; /* Add space between buttons */
+  }
+
+  .google-btn,
+  .apple-btn {
+    width: 100%; /* Full width for buttons */
+  }
 }
