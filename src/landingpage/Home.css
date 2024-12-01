@@ -1,5 +1,8 @@
 /* Home.css */
 
+*{
+   font-family: 'Poppins', sans-serif;
+}
 .search-container {
   position: relative;
   height: 100vh; /* Full screen height */
@@ -13,12 +16,14 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 90%;
-  height: 100%;
+  width: 100%;
+ 
   
   object-fit: cover; /* Ensures the image covers the screen proportionally */
-  z-index: -2; /* Places image at the back */
+  z-index: -1; /* Places image at the back */
 }
+
+
 
 .overlay {
   position: absolute;
@@ -40,10 +45,15 @@
 .title {
   border: 3px solid white;
   font-size: 3rem;
-  font-weight: bold;
   margin-bottom: 2rem;
-  display: flex;
+  text-align: center;
+  font-weight: 500;
   
+  
+}
+.title-head p{
+  font-size: 1.3rem;
+  color: white;
 }
 
 .search-form {

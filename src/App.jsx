@@ -42,6 +42,10 @@ function App() {
         <Route path="/vehicle/:id" element={<VehicleDetail/>} />
         <Route path="/login" element={<Login/>} />
 
+        <Route path="/DETAIL" element={<VehicleList />} />
+        <Route path="/vehicle/:id" element={<VehicleDetail />} />
+
+
         <Route path="/bikes" element={<FinalBikeList/>} />
         <Route element={<FinalBikeList/>} />
 

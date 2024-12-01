@@ -1,5 +1,5 @@
 import React from 'react';
-import backgroundImage from '../assets/logo/bgimage.png';
+import backgroundImage from '../assets/logo/pokhara.png';
 import './Home.css';
 
 const Home = () => {
@@ -13,9 +13,14 @@ const Home = () => {
 
       {/* Content */}
       <div className="search-content">
+        <div className='title-head'>
         <h1 className="title">
-          YOUR DESTINATION <br /> OUR WHEELS
+        Travel Anywhere, go through your heart
         </h1>
+        <p>
+        Book unforgettable vehicles from trusted hosts around Pokhara
+        </p>
+        </div>
 
         {/* Search Form */}
         <div className="search-form">

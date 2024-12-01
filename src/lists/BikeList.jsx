@@ -14,7 +14,7 @@ import './BikeList.css';
 
 const VehicleList = () => (
  <>
- <Navbar/>
+
   <div className="bike-list">
     {bikeData.map((vehicle) => (
       <div key={vehicle.id}>
@@ -27,7 +27,7 @@ const VehicleList = () => (
       </div>
     ))}
   </div>
-  <Footer/>
+  
   </>
  
 );

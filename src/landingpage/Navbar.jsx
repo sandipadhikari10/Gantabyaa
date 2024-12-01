@@ -8,18 +8,22 @@ const Navbar = () => {
     <>
     <nav className="navbar">
     
-      <div className="navbar-contact">
-        <div>📞 061 591363</div>
-        <div>✉ OurGantabya@gmail.com</div>
-        <div>🏠 Chipledhunga 10, Pokhara</div>
-      </div>
-      
-    </nav>
+    <div className="navbar-contact">
+      <div>📞 061 591363</div>
+      <div className="mailto">
+      <a href="mailto:someone@example.com?subject=Hello&body=How are you?" className="email-link">
+      ✉ OurGantabya@gmail.com
+    </a>
+    </div>
+      <div>🏠 Chipledhunga 10, Pokhara</div>
+    </div>
+    
+  </nav>
     
     <nav className="navbar-second">
       <div>
         <h2 className="navbar-header">
-        <Link className="no-underline text-black hover:text-blue-500" aria-current="page" to="/">Gantabya</Link>
+        <Link  to="/">Gantabya</Link>
         </h2>
       </div>
     <div className="navbar-links">
