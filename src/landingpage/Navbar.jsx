@@ -12,6 +12,7 @@ const Navbar = () => {
   }
   return (
     <>
+    <div className="navbar-container">
     <nav className="navbar">
     
     <div className="navbar-contact">
@@ -29,7 +30,7 @@ const Navbar = () => {
     <nav className="navbar-second">
       <div>
         <h2 className="navbar-header">
-        <Link  to="/">Gantabya</Link>
+        <Link style={{textDecoration:"none", color: "black"}} to="/">Gantabya</Link>
         </h2>
       </div>
       <button className="hamburger" onClick={toggleMenu}>
@@ -55,6 +56,7 @@ const Navbar = () => {
 
   
     </nav>
+    </div>
   
     </>
   );

@@ -6,7 +6,13 @@
   padding: 20px 50px;
   background-color: black;
   color: white;
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
+
 
 .mailto a {
   text-decoration: none;
@@ -19,6 +25,7 @@
   align-items: center;
   padding: 0 20px;
   gap: 100px;
+ margin-top: 65px;
 }
 
 .navbar-links ul {
@@ -35,7 +42,7 @@
 
 .navbar-header {
   text-decoration: none;
-  border: 2px solid;
+  
   margin-left: 100px;
   color: black;
 }
@@ -54,6 +61,11 @@
   cursor: pointer;
 }
 
+.navbar-container{
+  padding: 2px;
+ }
+ 
+
 
 @media screen and (max-width: 768px) {
   /* Hide Links on Smaller Screens */
@@ -61,14 +73,15 @@
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 60px;
+    top: 14px;
     right: 10px;
     background-color: white;
-    border: 1px solid #ccc;
+    border-bottom: 2px solid;
     padding: 10px;
     z-index: 1;
     width: 90%;
   }
+  
   .navbar-contact{
     display: none;
   }
@@ -86,6 +99,8 @@
 
   /* Hide Navbar Header Margin for Mobile */
   .navbar-header {
-    margin-left: 20px;
+    margin-left: 50px;
+    
   }
 }
+
