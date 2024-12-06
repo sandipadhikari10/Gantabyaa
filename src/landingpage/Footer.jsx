@@ -21,15 +21,15 @@ const Footer = () => {
           <div className="footer-section">
             <ul>
             
-            <li ><Link style={{color: 'white'}} to="/">Home</Link></li>
-              <li ><Link style={{color: 'white'}} to="/bikes">Bike</Link></li>
-              <li ><Link style={{color: 'white'}} to="/cars">Cars</Link></li>
+            <li ><Link style={{color: 'white'}} to="/" className="footer-info">Home</Link></li>
+              <li ><Link style={{color: 'white'}} to="/bikes" className="footer-info">Bikes</Link></li>
+              <li ><Link style={{color: 'white'}} to="/cars" className="footer-info">Cars</Link></li>
               </ul>
             
           </div>
           <div className="footer-section">
             <ul>
-            <li><Link style={{color: 'white'}} to="/aboutus">About us</Link></li>
+            <li><Link style={{color: 'white'}} to="/aboutus" className="footer-info">About us</Link></li>
               <li>Recreation</li>
               <li>Meeting & Events</li>
             </ul>

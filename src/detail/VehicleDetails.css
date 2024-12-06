@@ -12,13 +12,20 @@
   gap: 20px;
 }
 
+
 .vehicle-image {
-  width: 600px;
+  min-width: 600px;
   border-radius: 10px;
+  margin-top: 40px;
+}
+
+.vehicle-info{
+  margin-left: 10px;
 }
 
 .vehicle-info table {
   margin: 10px 0;
+  font-size: 1.2rem;
 }
 
 .Location-details
@@ -40,6 +47,16 @@
 .second-item{
   text-align: center;
   margin-top: 50px;
+  font-size: 2rem;
+  
+  
+}
+.second-para{
+  font-size: 1.4rem;
+  border: 1px solid;
+ 
+  text-align: center;
+  
   
 }
 
@@ -57,3 +74,41 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
+
+@media (max-width: 768px) {
+  .vehicle-detail-container {
+    margin: 10px; /* Reduce margin */
+    padding: 15px; /* Reduce padding */
+  }
+
+  .detail-header {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+  }
+
+  .vehicle-image {
+     /* Center image */
+     
+    min-width: 450px;
+  }
+
+  .vehicle-info table {
+    font-size: 1rem; /* Smaller font size for smaller screens */
+  }
+
+  .pay-btn {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .second-item {
+    font-size: 1.5rem;
+  }
+
+  .second-para {
+    font-size: 1.2rem;
+  }
+}
+
+
+

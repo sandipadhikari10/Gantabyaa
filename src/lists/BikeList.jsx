@@ -1,15 +1,13 @@
 import { Link } from "react-router-dom";
-import hondacrf from '../assets/bikes/crf.jpg';
+import React from "react";
 import bikeData from "./bikeData";
-import Navbar from "../landingpage/Navbar";
-import Footer from "../landingpage/Footer";
+
 import './BikeList.css';
 
 
 
 
     
-  // Add more vehicles
 
 
 const VehicleList = () => (
