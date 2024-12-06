@@ -11,6 +11,8 @@ import FinalBikeList from './lists/FinalBike';
 import AboutUs from './aboutus/Aboutus';
 import Footer from './landingpage/Footer';
 import Home from './landingpage/Home';
+import 'leaflet/dist/leaflet.css';
+
 
 
 

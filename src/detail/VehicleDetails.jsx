@@ -1,12 +1,31 @@
-import React from "react";
+
+import React, { useState } from "react";
+import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from "react-leaflet";
 import { useParams } from "react-router-dom";
 import "./VehicleDetails.css";
 import bikeData from "../lists/bikeData";
 import carData from "../lists/carData";
 import FinalBikeList from "../lists/FinalBike";
 import CarList from "../lists/CarList";
+import L from "leaflet";
 
 const VehicleDetail = () => {
+
+  const [selectedLocation, setSelectedLocation] = useState(null);
+
+  // Custom hook to handle map click events
+  const MapEvents = () => {
+    useMapEvents({
+      click(e) {
+        const { lat, lng } = e.latlng;
+        setSelectedLocation({ lat, lng });
+      },
+    });
+
+    return null;
+  };
+
+
   const { id } = useParams();
 
   // Search for the vehicle in both bikeData and carData
@@ -94,11 +113,41 @@ const VehicleDetail = () => {
               </tbody>
             </table>
             <div className="Location-details">
-              <input type="text" placeholder="Location" />
-              <input type="date" placeholder="Pick Up Date" />
-              <input type="date" placeholder="Drop Off Date" />
-              <button className="pay-btn">Pay</button>
-            </div>
+            <h3>Select a Pickup Location</h3>
+            <MapContainer
+              center={[28.26689, 83.96851]} // Initial map center (Kathmandu)
+              zoom={10}
+              style={{ width: "400px", height: "400px" }
+            }
+            >
+              <TileLayer
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+              />
+              <MapEvents />
+              {selectedLocation && (
+                <Marker
+                  position={selectedLocation}
+                  icon={new L.Icon({
+                    iconUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png",
+                    iconSize: [25, 41],
+                    iconAnchor: [12, 41],
+                    popupAnchor: [1, -34],
+                    shadowSize: [41, 41],
+                  })}
+                >
+                  <Popup>
+                    Selected Location: <br />
+                    Lat: {selectedLocation.lat}, Lng: {selectedLocation.lng}
+                  </Popup>
+                </Marker>
+              )}
+            </MapContainer>
+
+            <input type="date" placeholder="Pick Up Date" />
+            <input type="date" placeholder="Drop Off Date" />
+            <button className="pay-btn">Pay</button>
+          </div>
           </div>
         </div>
       </div>
