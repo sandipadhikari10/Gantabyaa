@@ -9,24 +9,29 @@ import FinalBikeList from './lists/FinalBike';
 import AboutUs from './aboutus/AboutUs';
 import Footer from './landingpage/Footer';
 import Home from './landingpage/Home';
+import Signup from './signup/SignUp';
 import 'leaflet/dist/leaflet.css';
+import { SessionProvider } from "./contexts/session-context";
 
 function App() {
   return (
     <>
       <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/bikes" element={<FinalBikeList />} />
-          <Route path="/cars" element={<CarList />} />
-          <Route path="/detail" element={<VehicleList />} />
+        <SessionProvider>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/bikes" element={<FinalBikeList />} />
+            <Route path="/cars" element={<CarList />} />
+            <Route path="/detail" element={<VehicleList />} />
 
-          <Route path="/vehicle/:id" element={<VehicleDetail />} />
-          <Route path="/aboutus" element={<AboutUs />} />
-        </Routes>
-        <Footer />
+            <Route path="/vehicle/:id" element={<VehicleDetail />} />
+            <Route path="/aboutus" element={<AboutUs />} />
+          </Routes>
+          <Footer />
+        </SessionProvider>
       </Router>
     </>
   )
