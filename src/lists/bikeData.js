@@ -9,7 +9,9 @@ const bikeData = [
      name: "Honda Shine 1",
      image: hondashine,
      type: "Old Classic bike",
+     feature: "Offroad",
      price: 1200,
+     
      details: {
        engine: "125 cc",
        tank: "12 liters",
@@ -17,7 +19,7 @@ const bikeData = [
        gears: "5 gear",
        brake: "Dual drum",
        insurance: "Third party",
-       price: 1200,
+       price: 1500,
      }
     },
     {
@@ -26,7 +28,8 @@ const bikeData = [
      name: "Himalaya 2",
      image: himalayan,
      type: "Old Classic bike",
-     price: 1200,
+     price: 1600,
+     feature: "Cruiser",
      details: {
        engine: "125 cc",
        tank: "12 liters",
@@ -42,8 +45,8 @@ const bikeData = [
         id: 3,
      name: "Honda Rally 3",
      image: hondashine,
-     price: 1200,
-     
+     price: 1100,
+     feature: "Long Tour",
      type: "Old Classic bike",
      details: {
        engine: "125 cc",
@@ -60,8 +63,8 @@ const bikeData = [
         id: 4,
      name: "Honda Shine 4",
      image: hondashine,
-     price: 1200,
-     
+     price: 2200,
+     feature: "Standard",
      type: "Old Classic bike",
      details: {
        engine: "125 cc",

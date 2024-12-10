@@ -1,0 +1,56 @@
+.manage-booking {
+  padding: 20px;
+}
+
+.manage-booking h1 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.manage-booking table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.manage-booking th,
+.manage-booking td {
+  text-align: left;
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+.manage-booking th {
+  background: #f4f4f4;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #333;
+}
+
+.manage-booking tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.manage-booking tr:hover {
+  background: #f1f1f1;
+}
+
+.manage-booking td {
+  color: #555;
+}
+
+.manage-booking .status {
+  font-weight: bold;
+  text-transform: capitalize;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.manage-booking .status.ongoing {
+  color: #fff;
+  background: #007bff;
+}
+
+.manage-booking .status.finished {
+  color: #fff;
+  background: #28a745;
+}
