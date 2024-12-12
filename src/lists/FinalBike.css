@@ -17,19 +17,22 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 1em;
+    background-color:  #f9f9f9;
   
   }
   
   .bike-card {
-    border: 1px solid #ddd;
+    border: 1px solid white;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
+    padding: 10px;
   }
   
   .bike-card:hover {
     transform: scale(1.02);
+    cursor: pointer;
   }
   
   
@@ -54,7 +57,7 @@ body {
   }
   
   .bike-details {
-    margin: 0.5em 0;
+    padding: 1em;
     color: #555;
   
     display: flex;
@@ -64,16 +67,29 @@ body {
   }
   
   .bike-price {
-    font-size: 1.3em;
+    font-size: 1.2em;
     
-    font-weight: bold;
+  
     color: #333;
-    margin-left: 10px;
+    margin-top: 20px;
+    margin-left: 160px;
+    
+    background-color: hsl(0, 2%, 92%);
+    border-radius: 40px;
+    padding: 5px;
     
    
   }
+  .bikeName{
+    font-size: 1.2em;
+    margin: 15px;
+    color: #D38561;
+    
+    
 
-  .details-show{
+  }
+
+  .bikedetails-show{
     display: flex;
     
     justify-content: space-around;

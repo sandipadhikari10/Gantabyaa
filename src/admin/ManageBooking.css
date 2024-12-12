@@ -1,10 +1,14 @@
 .manage-booking {
   padding: 20px;
+  width: 100%;
 }
 
 .manage-booking h1 {
   font-size: 1.8rem;
   margin-bottom: 20px;
+}
+.main-managebooking{
+  display: flex;
 }
 
 .manage-booking table {

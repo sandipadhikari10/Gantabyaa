@@ -146,7 +146,7 @@ const VehicleDetail = () => {
 
             <input type="date" placeholder="Pick Up Date" />
             <input type="date" placeholder="Drop Off Date" />
-            <button className="pay-btn">Pay</button>
+            <button className="pay-btn">Book Now</button>
           </div>
           </div>
         </div>

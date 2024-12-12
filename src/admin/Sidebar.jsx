@@ -15,7 +15,7 @@ const Sidebar = () => {
       <h2 className="logo">Car Rental Portal</h2>
       <ul className="menu">
         <li>
-          <Link to="/">Dashboard</Link>
+          <Link to="/admin">Dashboard</Link>
         </li>
         <li onClick={toggleDropdown}>
           Vehicles

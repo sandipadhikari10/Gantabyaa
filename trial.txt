@@ -1,3 +1,5 @@
+
+
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from './landingpage/Navbar';
 import Login from './login/Login';
@@ -31,7 +33,7 @@ function AppWithNavbar() {
   
   return (
     <>
-      
+      <Router>
         <SessionProvider>
            {!hideNavbarRoutes.includes(location.pathname) && <Navbar />}
           <Routes>
@@ -44,19 +46,73 @@ function AppWithNavbar() {
 
             <Route path="/vehicle/:id" element={<VehicleDetail />} />
             <Route path="/aboutus" element={<AboutUs />} />
+
             
         <Route path="/admin" element={<Dashboard />} />
         <Route path="/manage-booking" element={<ManageBooking />} />
         <Route path="/details/:type" element={<DetailsPage />} />
         <Route path="/post-vehicle" element={<PostVehicle />} />
         <Route path="/manage-vehicle" element={<ManageVehicle />} />
+
           </Routes>
           <Footer />
         </SessionProvider>
-    
+      </Router>
     </>
   )
 }
+function App() {
+  return (
+    <Router>
+      <AppWithNavbar />
+      
+    </Router>
+  );
+}
+
+export default App;
+=======
+
+
+// Component to handle Navbar visibility
+function AppWithNavbar() {
+  const location = useLocation(); // Get the current route path
+
+  // Define routes where Navbar should be hidden
+  const hideNavbarRoutes = ["/admin", "/manage-booking", "/post-vehicle", "/manage-vehicle"];
+ 
+  
+
+  return (
+    <>
+      {/* Render Navbar only if the current route is not in `hideNavbarRoutes` */}
+      {!hideNavbarRoutes.includes(location.pathname) && <Navbar />}
+      
+     
+    
+      
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/bikes" element={<FinalBikeList />} />
+        <Route path="/cars" element={<CarList />} />
+        <Route path="/detail" element={<VehicleList />} />
+        <Route path="/vehicle/:id" element={<VehicleDetail />} />
+        <Route path="/aboutus" element={<AboutUs />} />
+        
+        
+        <Route path="/admin" element={<Dashboard />} />
+        <Route path="/manage-booking" element={<ManageBooking />} />
+        <Route path="/details/:type" element={<DetailsPage />} />
+        <Route path="/post-vehicle" element={<PostVehicle />} />
+        <Route path="/manage-vehicle" element={<ManageVehicle />} />
+      </Routes>
+   
+    </>
+  );
+>>>>>>> main
+}
+
 function App() {
   return (
     <Router>
