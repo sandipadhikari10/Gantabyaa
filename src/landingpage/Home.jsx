@@ -70,7 +70,7 @@ const Home = () => {
         <div className="search-content">
           <div className="title-head">
             <h1 className="title">Travel Anywhere, go through your heart</h1>
-            <p>Book unforgettable vehicles from trusted hosts around Pokhara</p>
+            <p className="title-para">Book unforgettable vehicles from trusted hosts around Pokhara</p>
           </div>
 
           {/* Search Form */}

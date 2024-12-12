@@ -175,5 +175,20 @@ select {
 
   
   }
+  .title{
+    font-size: 2rem;
+  }
+  .title-para{
+    font-size: 1em;
+  }
+  .destination-image{
+    height: 150px;
+    gap: 10px;
+    
 
+  }
+  .destination-card h3{
+    font-size: 1rem;
+  }
+  
 }

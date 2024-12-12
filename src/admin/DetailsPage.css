@@ -1,0 +1,14 @@
+.details-page {
+    padding: 20px;
+  }
+  
+  .details-page h1 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  
+  .details-page p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
