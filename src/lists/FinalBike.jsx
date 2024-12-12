@@ -12,9 +12,9 @@ const FinalBikeList = () => {
           <div key={bike.id} className="bike-card">
             <Link to={`/vehicle/${bike.id}`} className='info'>
             <img src={bike.image} alt={bike.name} className="bike-image" />
-              <h3>{bike.name}</h3>
+              <h3 className='bikeName'>{bike.name}</h3>
             <div className="bike-details">
-              <div className='details-show'>
+              <div className='bikedetails-show'>
               <div><p>Free Cancelation</p>
               <p>Instant Booking</p></div>
               <div><p>{bike.feature}</p>

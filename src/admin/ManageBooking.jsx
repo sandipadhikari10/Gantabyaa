@@ -1,5 +1,6 @@
 import React from "react";
 import "./ManageBooking.css";
+import Sidebar from "./Sidebar";
 
 const ManageBooking = () => {
   const bookings = [
@@ -31,6 +32,10 @@ const ManageBooking = () => {
   ];
 
   return (
+    <div className="main-managebooking">
+      <Sidebar/>
+
+   
     <div className="manage-booking">
       <h1>Manage Booking</h1>
       <table>
@@ -55,6 +60,7 @@ const ManageBooking = () => {
           ))}
         </tbody>
       </table>
+    </div>
     </div>
   );
 };

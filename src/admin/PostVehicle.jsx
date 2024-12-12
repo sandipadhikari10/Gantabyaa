@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./PostVehicle.css";
+import Sidebar from "./Sidebar";
 
 const PostVehicle = () => {
   const [vehicleData, setVehicleData] = useState({
@@ -30,7 +31,10 @@ const PostVehicle = () => {
   };
 
   return (
+    <div className="main-postcontainer">
+      <Sidebar/>
     <div className="post-vehicle-container">
+    
       <h1>Post A Vehicle</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-section">
@@ -130,6 +134,7 @@ const PostVehicle = () => {
         </div>
         <button type="submit" className="submit-btn">Submit</button>
       </form>
+    </div>
     </div>
   );
 };

@@ -15,7 +15,7 @@ const VehicleList = () => (
 
   <div className="bike-list">
     {bikeData.map((vehicle) => (
-      <div key={vehicle.id}>
+      <div key={vehicle.id} className="bike-card">
         
       
         <Link to={`/vehicle/${vehicle.id}`}>

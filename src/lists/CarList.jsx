@@ -13,9 +13,16 @@ const CarList = () => {
           <div key={car.id} className="car-card">
             <Link to={`/vehicle/${car.id}`} className='info'>
             <img src={car.image} alt={car.name} className="car-image" />
+              <h3 className='carName'>{car.name}</h3>
             <div className="car-details">
-              <h3>{car.name}</h3>
-              <span className="car-price">Rs. {car.price} per day</span>
+            <div className='cardetails-show'>
+              <div><p>Free Cancelation</p>
+              <p>Instant Booking</p></div>
+              </div>
+
+
+              
+              <div className="car-price">Rs. {car.price} per day</div>
               </div>
               </Link>
             </div>

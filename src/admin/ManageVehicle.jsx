@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./ManageVehicle.css";
+import Sidebar from "./Sidebar";
 
 const ManageVehicle = () => {
   const [vehicles, setVehicles] = useState([]);
@@ -34,6 +35,8 @@ const ManageVehicle = () => {
   };
 
   return (
+    <div className="main-managecontainer">
+      <Sidebar/>
     <div className="manage-vehicle-container">
       <h1>Manage Vehicles</h1>
       <div className="vehicle-table-container">
@@ -72,6 +75,7 @@ const ManageVehicle = () => {
           </tbody>
         </table>
       </div>
+    </div>
     </div>
   );
 };

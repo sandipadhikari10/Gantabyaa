@@ -17,7 +17,7 @@ function SignUp() {
       username: formData.get("username"),
       email: formData.get("email"),
       password: formData.get("password"),
-    }
+    };
     fetch(backendUrl("/api/users/register"), {
       method: "POST",
       body: JSON.stringify(body),
@@ -25,7 +25,7 @@ function SignUp() {
         "Content-Type": "application/json",
       },
     }).then((response) => {
-      navigate('/login')
+      navigate("/login");
       if (response.ok) {
         alert("Registration successful!");
       } else {
@@ -40,8 +40,22 @@ function SignUp() {
         <h2>Sign In</h2>
         <form className="form-signup" method="post" onSubmit={handleSubmit}>
           <div className="input-group">
-            <input className="input-name" type="text" placeholder="Enter full name" name="username" defaultValue={"xoxo2"} required />
-            <input className="input-name" type="email" placeholder="Email" name="email" defaultValue={"xoxo2@gmail.com"} required />
+            <input
+              className="input-name"
+              type="text"
+              placeholder="Enter full name"
+              name="username"
+              defaultValue={"mount annapurna"}
+              required
+            />
+            <input
+              className="input-name"
+              type="email"
+              placeholder="Email"
+              name="email"
+              defaultValue={"macpokhara2@gmail.com"}
+              required
+            />
 
             <div className="password-field">
               <input
@@ -76,17 +90,19 @@ function SignUp() {
           </div>
 
           <div className="checkbox-field">
-            <input className="agree-input" type="checkbox" required />&nbsp;
-            <label htmlFor="agree">I Agree with privacy and policy</label>
+            
+            <input type="checkbox" id="option1" /><br />
+            <label for="option1">I agree with privacy and policy</label>
           </div>
+
           <button type="submit" className="signup-btn">
             Sign up
           </button>
         </form>
-        <p className="existing-account">
-          Already have an account?  </p>
-        <a className="exist-acc" href="/login">Sign in</a>
-
+        <p className="existing-account">Already have an account? </p>
+        <a className="exist-acc" href="/login">
+          Sign in
+        </a>
       </div>
     </div>
   );
