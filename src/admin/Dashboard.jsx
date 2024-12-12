@@ -76,9 +76,12 @@ const Dashboard = () => {
                 <h3>{item.count}</h3>
                 <p>{item.title}</p>
 
+                <Link to={item.path}>
                 <div className="card-detail">
-                  <Link to={item.path}>Full Detail →</Link>
-                </div>
+                  Full Detail →
+                  </div>
+                  </Link>
+               
               </div>
             ))}
           </div>
