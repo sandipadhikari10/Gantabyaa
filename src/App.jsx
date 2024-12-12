@@ -58,7 +58,7 @@ function App() {
   return (
     <Router>
       <AppWithNavbar />
-      <Footer/>
+      
     </Router>
   );
 }

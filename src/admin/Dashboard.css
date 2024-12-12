@@ -98,6 +98,7 @@
 .dropdown {
   position: relative;
   display: inline-block;
+  
 }
 
 .dash-button {
@@ -107,11 +108,14 @@
   padding: 10px 15px;
   border-radius: 5px;
   cursor: pointer;
+  margin-top: 12px;
+ 
 }
+
 
 .dropdown-menu {
   position: absolute;
-  top: 40px;
+  top: 50px;
   right: 0;
   background-color: #444;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
