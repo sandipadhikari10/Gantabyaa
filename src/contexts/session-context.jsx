@@ -6,9 +6,11 @@ export function SessionProvider({ children }) {
   const [session, setSession] = React.useState(null)
 
   async function fetchSessionData() {
-    const session = localStorage.getItem("session")
-    if (session) {
-      setSession(JSON.parse(session))
+    const session = await fetch('/api/auth/session').then(res => res.json())
+    if (session.statusCode === 401) {
+      setSession(null)
+    } else {
+      setSession(session)
     }
   }
 
@@ -18,12 +20,10 @@ export function SessionProvider({ children }) {
 
 
   return <SessionContext.Provider value={{
-    removeSession: () => {
-      localStorage.removeItem("session")
-      setSession(null)
-    },
+    removeSession: () => setSession(null),
+    revalidateSession: () => fetchSessionData(),
     session
   }}>
     {children}
-  </SessionContext.Provider>
+  </SessionContext.Provider >
 }

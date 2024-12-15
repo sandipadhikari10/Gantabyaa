@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./SignUp.css"; // Include the corresponding CSS file
 import { FaEyeSlash, FaEye } from "react-icons/fa";
-import { backendUrl } from "../constants";
 import { useNavigate } from "react-router-dom";
 
 function SignUp() {
@@ -14,11 +13,11 @@ function SignUp() {
     event.preventDefault();
     const formData = new FormData(event.target);
     const body = {
-      username: formData.get("username"),
+      name: formData.get("name"),
       email: formData.get("email"),
       password: formData.get("password"),
     };
-    fetch(backendUrl("/api/users/register"), {
+    fetch("/api/auth/register", {
       method: "POST",
       body: JSON.stringify(body),
       headers: {
@@ -44,7 +43,7 @@ function SignUp() {
               className="input-name"
               type="text"
               placeholder="Enter full name"
-              name="username"
+              name="name"
               defaultValue={"mount annapurna"}
               required
             />
@@ -90,7 +89,7 @@ function SignUp() {
           </div>
 
           <div className="checkbox-field">
-            
+
             <input type="checkbox" id="option1" /><br />
             <label for="option1">I agree with privacy and policy</label>
           </div>

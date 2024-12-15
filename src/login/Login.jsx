@@ -1,16 +1,21 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './Logins.css';
 import { FaEyeSlash, FaEye } from "react-icons/fa";
 import googleIcon from '../assets/logo/google.jpg';
 import { FaApple } from "react-icons/fa";
-import { backendUrl } from '../constants';
 import { SessionContext } from '../contexts/session-context';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const navigate = useNavigate();
-  const session = useContext(SessionContext);
+  const { session, revalidateSession } = useContext(SessionContext);
+
+  useEffect(() => {
+    if (session) {
+      navigate('/bikes')
+    }
+  }, [session])
 
   function handleSubmit(event) {
     console.log(event.target);
@@ -22,7 +27,7 @@ const Login = () => {
       password: formData.get("password"),
     }
 
-    fetch(backendUrl("/api/users/login"), {
+    fetch("/api/auth/login", {
       method: "POST",
       body: JSON.stringify(body),
       headers: {
@@ -30,9 +35,7 @@ const Login = () => {
       },
     }).then(async (response) => {
       if (response.ok) {
-        const data = await response.json()
-        localStorage.setItem("session", JSON.stringify(data.data));
-        alert("Login successful!");
+        revalidateSession()
         navigate('/bikes')
       } else {
         alert("Login failed!");
@@ -40,20 +43,15 @@ const Login = () => {
     });
   }
 
-
-  console.log("Session : ", session.session)
-  if (!!session.session) navigate('/')
-
   return (
-
     <div className="login-container">
       <div className="login-box">
         <form className='form-login' method="post" onSubmit={handleSubmit}>
           <div className="input-group">
-            <input className='input-name' type="text" name="email" placeholder="Email or phone number" required />
+            <input className='input-name' type="text" name="email" placeholder="Email or phone number" required defaultValue={"macpokhara2@gmail.com"} />
 
             <div className="password-field">
-              <input className='input-name' type={passwordVisible ? "text" : "password"} name="password" placeholder="Password" required />
+              <input className='input-name' type={passwordVisible ? "text" : "password"} name="password" placeholder="Password" required defaultValue={"000000000000"} />
               <span
                 className="toggle-password"
                 onClick={() => setPasswordVisible(!passwordVisible)}

@@ -1,10 +1,7 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import './Navbar.css';
 import { Link, useNavigate } from "react-router-dom"
 import { SessionContext } from "../contexts/session-context";
-
-
-
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,13 +10,25 @@ const Navbar = () => {
   }
   const navigate = useNavigate();
 
-  const {session, removeSession} = useContext(SessionContext);
+  const { session, removeSession } = useContext(SessionContext);
 
   function handleLogout() {
-    removeSession()
-    alert("Logout successful!")
-    navigate('/login')
+    fetch('/api/auth/logout', {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then(removeSession)
+      .then(navigate('/login'))
   }
+
+  useEffect(() => {
+    console.log("SESSSSION :", session)
+    if (!session) {
+      navigate('/login')
+    }
+  }, [session])
 
   return (
     <>
@@ -59,9 +68,6 @@ const Navbar = () => {
               {session && <li className="nav-item"><button className="nav-link" onClick={handleLogout}>Logout</button></li>}
             </ul>
           </div>
-
-
-
         </nav>
       </div>
 

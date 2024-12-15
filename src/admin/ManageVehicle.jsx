@@ -36,46 +36,46 @@ const ManageVehicle = () => {
 
   return (
     <div className="main-managecontainer">
-      <Sidebar/>
-    <div className="manage-vehicle-container">
-      <h1>Manage Vehicles</h1>
-      <div className="vehicle-table-container">
-        <h2>Vehicle Details</h2>
-        <table className="vehicle-table">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Vehicle Title</th>
-              <th>Brand</th>
-              <th>Price Per day</th>
-              <th>Fuel Type</th>
-              <th>Model Year</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {vehicles.map((vehicle, index) => (
-              <tr key={vehicle.id}>
-                <td>{index + 1}</td>
-                <td>{vehicle.title}</td>
-                <td>{vehicle.brand}</td>
-                <td>{vehicle.price}</td>
-                <td>{vehicle.fuel}</td>
-                <td>{vehicle.modelYear}</td>
-                <td>
-                  <button onClick={() => handleEdit(vehicle.id)} className="edit-btn">
-                    ✎
-                  </button>
-                  <button onClick={() => handleDelete(vehicle.id)} className="delete-btn">
-                    ✖
-                  </button>
-                </td>
+      <Sidebar />
+      <div className="manage-vehicle-container">
+        <h1>Manage Vehicles</h1>
+        <div className="vehicle-table-container">
+          <h2>Vehicle Details</h2>
+          <table className="vehicle-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Vehicle Title</th>
+                <th>Brand</th>
+                <th>Price Per day</th>
+                <th>Fuel Type</th>
+                <th>Model Year</th>
+                <th>Action</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {vehicles.map((vehicle, index) => (
+                <tr key={vehicle.id}>
+                  <td>{index + 1}</td>
+                  <td>{vehicle.title}</td>
+                  <td>{vehicle.brand}</td>
+                  <td>{vehicle.price}</td>
+                  <td>{vehicle.fuel}</td>
+                  <td>{vehicle.modelYear}</td>
+                  <td>
+                    <button onClick={() => handleEdit(vehicle.id)} className="edit-btn">
+                      ✎
+                    </button>
+                    <button onClick={() => handleDelete(vehicle.id)} className="delete-btn">
+                      ✖
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
-    </div>
     </div>
   );
 };
