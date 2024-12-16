@@ -3,7 +3,7 @@ import * as React from 'react';
 export const SessionContext = React.createContext(null)
 
 export function SessionProvider({ children }) {
-  const [session, setSession] = React.useState(null)
+  const [session, setSession] = React.useState(true)
 
   async function fetchSessionData() {
     const session = await fetch('/api/auth/session').then(res => res.json())

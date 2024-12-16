@@ -20,18 +20,18 @@ const FinalBikeList = () => {
       <div className="bike-list" style={{ padding: "100px" }}>
         {bikeData ? bikeData.map((bike) => (
           <div key={bike.id} className="bike-card">
-            <Link to={`/vehicle/${bike.id}`} className='info'>
+            <Link to={`/vehicle/${bike._id}`} className='info'>
               <img src={bike.image} alt={bike.name} className="bike-image" />
               <h3 className='bikeName'>{bike.name}</h3>
               <div className="bike-details">
                 <div className='bikedetails-show'>
                   <div><p>Free Cancelation</p>
                     <p>Instant Booking</p></div>
-                  <div><p>{bike.feature}</p>
+                  <div><p>{bike.description}</p>
                     <p>{bike.type}</p></div>
                 </div>
 
-                <div className="bike-price">Rs. {bike.price} per day</div>
+                <div className="bike-price">Rs. {bike.pricePerDay} per day</div>
               </div>
             </Link>
           </div>

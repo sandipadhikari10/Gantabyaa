@@ -29,7 +29,7 @@ const VehicleDetail = () => {
     return null;
   };
 
-  const isBike = vehicle.type === "bike";
+  const isBike = vehicle?.type === "bike";
 
   if (vehicle === null) {
     return <p>Vehicle not found!</p>;
@@ -37,14 +37,12 @@ const VehicleDetail = () => {
     return <p>Fetching vehicle data....</p>;
   }
 
-  return vehicle
-
   return (
     <>
       <div className="vehicle-detail-container">
         <div className="detail-header">
           <img
-            src={vehicle.image}
+            src={vehicle.images[0]}
             alt={vehicle.name}
             className="vehicle-image"
           />
@@ -58,27 +56,27 @@ const VehicleDetail = () => {
                   <>
                     <tr>
                       <td>Engine Capacity:</td>
-                      <td>{vehicle.details.engine}</td>
+                      <td>{vehicle.details?.engine}</td>
                     </tr>
                     <tr>
                       <td>Tank Capacity:</td>
-                      <td>{vehicle.details.tank}</td>
+                      <td>{vehicle.details?.tank}</td>
                     </tr>
                     <tr>
                       <td>Mileage:</td>
-                      <td>{vehicle.details.mileage}</td>
+                      <td>{vehicle.details?.mileage}</td>
                     </tr>
                     <tr>
                       <td>Gears:</td>
-                      <td>{vehicle.details.gears}</td>
+                      <td>{vehicle.details?.gears}</td>
                     </tr>
                     <tr>
                       <td>Brake:</td>
-                      <td>{vehicle.details.brake}</td>
+                      <td>{vehicle.details?.brake}</td>
                     </tr>
                     <tr>
                       <td>Insurance:</td>
-                      <td>{vehicle.details.insurance}</td>
+                      <td>{vehicle.details?.insurance}</td>
                     </tr>
                   </>
                 ) : (
@@ -86,68 +84,69 @@ const VehicleDetail = () => {
                   <>
                     <tr>
                       <td>Engine Power:</td>
-                      <td>{vehicle.details.engine || "N/A"}</td>
+                      <td>{vehicle.details?.engine || "N/A"}</td>
                     </tr>
                     <tr>
                       <td>Seating Capacity:</td>
-                      <td>{vehicle.details.seats || "N/A"}</td>
+                      <td>{vehicle.details?.seats || "N/A"}</td>
                     </tr>
                     <tr>
                       <td>Fuel Type:</td>
-                      <td>{vehicle.details.fuelType || "N/A"}</td>
+                      <td>{vehicle.details?.fuelType || "N/A"}</td>
                     </tr>
                     <tr>
                       <td>Transmission:</td>
-                      <td>{vehicle.details.transmission || "N/A"}</td>
+                      <td>{vehicle.details?.transmission || "N/A"}</td>
                     </tr>
                     <tr>
                       <td>Milleage:</td>
-                      <td>{vehicle.details.mileage || "N/A"}</td>
+                      <td>{vehicle.details?.mileage || "N/A"}</td>
                     </tr>
                     <tr>
                       <td>Insurance:</td>
-                      <td>{vehicle.details.insurance}</td>
+                      <td>{vehicle.details?.insurance}</td>
                     </tr>
                   </>
                 )}
               </tbody>
             </table>
-            <div className="Location-details">
-              <h3>Select a Pickup Location</h3>
-              <MapContainer
-                center={[28.26689, 83.96851]} // Initial map center (Kathmandu)
-                zoom={10}
-                style={{ width: "400px", height: "400px" }
-                }
-              >
-                <TileLayer
-                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                  attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                />
-                <MapEvents />
-                {selectedLocation && (
-                  <Marker
-                    position={selectedLocation}
-                    icon={new L.Icon({
-                      iconUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png",
-                      iconSize: [25, 41],
-                      iconAnchor: [12, 41],
-                      popupAnchor: [1, -34],
-                      shadowSize: [41, 41],
-                    })}
-                  >
-                    <Popup>
-                      Selected Location: <br />
-                      Lat: {selectedLocation.lat}, Lng: {selectedLocation.lng}
-                    </Popup>
-                  </Marker>
-                )}
-              </MapContainer>
-
-              <input type="date" placeholder="Pick Up Date" />
-              <input type="date" placeholder="Drop Off Date" />
-              <button className="pay-btn">Book Now</button>
-            </div>
+            <form method="POST" action={`/api/vehicles/book/${id}`}>
+              <div className="Location-details">
+                <h3>Select a Pickup Location</h3>
+                <MapContainer
+                  center={[28.26689, 83.96851]} // Initial map center (Kathmandu)
+                  zoom={10}
+                  style={{ width: "400px", height: "400px" }
+                  }
+                >
+                  <TileLayer
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                  />
+                  <MapEvents />
+                  {selectedLocation && (
+                    <Marker
+                      position={selectedLocation}
+                      icon={new L.Icon({
+                        iconUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png",
+                        iconSize: [25, 41],
+                        iconAnchor: [12, 41],
+                        popupAnchor: [1, -34],
+                        shadowSize: [41, 41],
+                      })}
+                    >
+                      <Popup>
+                        Selected Location: <br />
+                        Lat: {selectedLocation.lat}, Lng: {selectedLocation.lng}
+                      </Popup>
+                    </Marker>
+                  )}
+                </MapContainer>
+                <input type="date" name="from" placeholder="Pick Up Date" />
+                <input type="date" name="to" placeholder="Drop Off Date" />
+                <button className="pay-btn">Book Now</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>

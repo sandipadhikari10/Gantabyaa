@@ -24,7 +24,6 @@ const Navbar = () => {
   }
 
   useEffect(() => {
-    console.log("SESSSSION :", session)
     if (!session) {
       navigate('/login')
     }
