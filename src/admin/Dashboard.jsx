@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "./Dashboard.css";
 import "./Sidebar.css";
 import Sidebar from "./Sidebar";
-import { use } from "react";
 
 const Dashboard = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -77,11 +76,11 @@ const Dashboard = () => {
                 <p>{item.title}</p>
 
                 <Link to={item.path}>
-                <div className="card-detail">
-                  Full Detail →
+                  <div className="card-detail">
+                    Full Detail →
                   </div>
-                  </Link>
-               
+                </Link>
+
               </div>
             ))}
           </div>

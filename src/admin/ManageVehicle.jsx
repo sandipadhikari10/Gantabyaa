@@ -6,14 +6,7 @@ const ManageVehicle = () => {
   const [vehicles, setVehicles] = useState([]);
 
   useEffect(() => {
-    // Mocked initial data; replace with API call if needed
-    setVehicles([
-      { id: 1, title: "ytb rvtr", brand: "BMW", price: "345345", fuel: "Petrol", modelYear: "3453" },
-      { id: 2, title: "Test Demoy", brand: "BMW", price: "859", fuel: "CNG", modelYear: "2015" },
-      { id: 3, title: "Lorem ipsum", brand: "Nissan", price: "563", fuel: "CNG", modelYear: "2012" },
-      { id: 4, title: "Lorem ipsum", brand: "Maruti", price: "5636", fuel: "CNG", modelYear: "2012" },
-      { id: 5, title: "ytb rvtr", brand: "Toyota", price: "345345", fuel: "Petrol", modelYear: "3453" },
-    ]);
+    fetch("/api/admin/vehicle").then((response) => response.json()).then((data) => setVehicles(data));
   }, []);
 
   const handleEdit = (id) => {
@@ -30,7 +23,9 @@ const ManageVehicle = () => {
   const handleDelete = (id) => {
     const confirmDelete = window.confirm("Are you sure you want to delete this vehicle?");
     if (confirmDelete) {
-      setVehicles(vehicles.filter((vehicle) => vehicle.id !== id));
+      fetch(`/api/admin/vehicle/${id}`, { method: "DELETE" }).then(() => {
+        setVehicles(vehicles.filter((vehicle) => vehicle._id !== id));
+      });
     }
   };
 
@@ -55,18 +50,18 @@ const ManageVehicle = () => {
             </thead>
             <tbody>
               {vehicles.map((vehicle, index) => (
-                <tr key={vehicle.id}>
+                <tr key={vehicle._id}>
                   <td>{index + 1}</td>
-                  <td>{vehicle.title}</td>
-                  <td>{vehicle.brand}</td>
-                  <td>{vehicle.price}</td>
-                  <td>{vehicle.fuel}</td>
+                  <td>{vehicle.name}</td>
+                  <td>{vehicle.type}</td>
+                  <td>{vehicle.pricePerDay}</td>
+                  <td>{vehicle.fuelType}</td>
                   <td>{vehicle.modelYear}</td>
                   <td>
-                    <button onClick={() => handleEdit(vehicle.id)} className="edit-btn">
+                    <button onClick={() => handleEdit(vehicle._id)} className="edit-btn">
                       ✎
                     </button>
-                    <button onClick={() => handleDelete(vehicle.id)} className="delete-btn">
+                    <button onClick={() => handleDelete(vehicle._id)} className="delete-btn">
                       ✖
                     </button>
                   </td>
