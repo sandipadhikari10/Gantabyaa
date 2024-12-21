@@ -62,6 +62,7 @@ const Navbar = () => {
                 <Link className="nav-link active" aria-current="page" to="/">Home</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/bikes">Bike</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/cars">Cars</Link></li>
+              <li className="nav-item"><Link className="nav-link" to="/bookings">My Bookings</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/aboutus">About us</Link></li>
               {!session && <li className="nav-item"><Link className="nav-link" to="/login">Login</Link></li>}
               {session && <li className="nav-item"><button className="nav-link" onClick={handleLogout}>Logout</button></li>}

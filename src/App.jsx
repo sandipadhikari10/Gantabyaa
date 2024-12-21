@@ -21,6 +21,7 @@ import PostVehicle from "./admin/PostVehicle";
 import ManageVehicle from "./admin/ManageVehicle";
 
 import { SessionProvider } from "./contexts/session-context";
+import MyBookings from "./bookings/MyBookings";
 
 function AppWithNavbar() {
 
@@ -41,6 +42,7 @@ function AppWithNavbar() {
           <Route path="/login" element={<Login />} />
           <Route path="/bikes" element={<FinalBikeList />} />
           <Route path="/cars" element={<CarList />} />
+          <Route path="/bookings" element={<MyBookings />} />
           <Route path="/detail" element={<VehicleList />} />
 
           <Route path="/vehicle/:id" element={<VehicleDetail />} />
