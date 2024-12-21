@@ -28,6 +28,7 @@ const MyBookings = () => {
           <p>{booking.vehicle.type}</p>
           <p>From: {booking.bookingInfo.from}</p>
           <p>To: {booking.bookingInfo.to}</p>
+          <p>Status: {booking.bookingInfo.status}</p>
         </Link>
       ))}
     </div>
