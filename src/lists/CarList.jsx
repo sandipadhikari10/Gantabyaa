@@ -18,8 +18,8 @@ const CarList = () => {
     <>
       <div className="car-list">
         {carData.map((car) => (
-          <div key={car.id} className="car-card">
-            <Link to={`/vehicle/${car.id}`} className='info'>
+          <div key={car._id} className="car-card">
+            <Link to={`/vehicle/${car._id}`} className='info'>
               <img src={car.image} alt={car.name} className="car-image" />
               <h3 className='carName'>{car.name}</h3>
               <div className="car-details">

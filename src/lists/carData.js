@@ -9,7 +9,7 @@ import hilux from '../assets/cars/bolero.png';
 
 const carData = [
   {
-  id: 101,
+    id: 101,
     name: 'Toyota Corolla',
     image: scorpio,
     price: 5000,
