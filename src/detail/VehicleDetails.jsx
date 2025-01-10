@@ -142,8 +142,9 @@ const VehicleDetail = () => {
                     </Marker>
                   )}
                 </MapContainer>
-                <input type="date" name="from" placeholder="Pick Up Date" />
-                <input type="date" name="to" placeholder="Drop Off Date" />
+                <input type="string" name="pickupCoords" hidden value={selectedLocation ? JSON.stringify(selectedLocation) : undefined} required />
+                <input type="date" name="from" placeholder="Pick Up Date" required/>
+                <input type="date" name="to" placeholder="Drop Off Date" required/>
                 <button className="pay-btn">Book Now</button>
               </div>
             </form>
