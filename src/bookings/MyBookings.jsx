@@ -22,7 +22,7 @@ const MyBookings = () => {
   return <div>
     <h1>My Bookings</h1>
     <div style={{ display: "flex", flexWrap: 'wrap', gap: '10px' }}>
-      {bookings.map((booking) => (
+      {!!bookings.length ? bookings.map((booking) => (
         <Link to={`/vehicle/${booking.vehicle._id}`} key={booking.id} style={{ border: "1px solid black", padding: "10px", margin: "10px" }}>
           <h2>{booking.vehicle.name}</h2>
           <p>{booking.vehicle.type}</p>
@@ -30,7 +30,7 @@ const MyBookings = () => {
           <p>To: {booking.bookingInfo.to}</p>
           <p>Status: {booking.bookingInfo.status}</p>
         </Link>
-      ))}
+      )) : <div>No bookings yet</div>}
     </div>
   </div>
 };
