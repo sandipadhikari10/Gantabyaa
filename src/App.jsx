@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from "react-route
 import Navbar from './landingpage/Navbar';
 import Login from './login/Login';
 
-import VehicleList from './lists/BikeList';
 import VehicleDetail from './detail/VehicleDetails';
 import CarList from './lists/CarList';
 import FinalBikeList from './lists/FinalBike';
@@ -43,7 +42,6 @@ function AppWithNavbar() {
           <Route path="/bikes" element={<FinalBikeList />} />
           <Route path="/cars" element={<CarList />} />
           <Route path="/bookings" element={<MyBookings />} />
-          <Route path="/detail" element={<VehicleList />} />
 
           <Route path="/vehicle/:id" element={<VehicleDetail />} />
           <Route path="/vehicle/book/:id/confirm" element={<VehicleBookConfirm />} />

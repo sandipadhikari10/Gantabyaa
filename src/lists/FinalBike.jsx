@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './FinalBike.css';
 import { Link } from "react-router-dom";
-import bikeDataFromFile from "./bikeData";
-
 
 const FinalBikeList = () => {
-  // Remove this bikeDataFromFile and use the fetched data from the API
-  const [bikeData, setBikeData] = useState(bikeDataFromFile);
+  const [bikeData, setBikeData] = useState([]);
 
   useEffect(() => {
     fetch("/api/vehicles?type=bike")
@@ -14,11 +11,10 @@ const FinalBikeList = () => {
       .then((data) => setBikeData(data));
   }, []);
 
-
   return (
     <>
       <div className="bike-list" style={{ padding: "100px" }}>
-        {bikeData ? bikeData.map((bike) => (
+        {!!bikeData.length ? bikeData.map((bike) => (
           <div key={bike.id} className="bike-card">
             <Link to={`/vehicle/${bike._id}`} className='info'>
               <img src={bike.image} alt={bike.name} className="bike-image" />
@@ -39,9 +35,6 @@ const FinalBikeList = () => {
         )) : <h2>No data to show</h2>}
       </div>
     </>
-
-
-
   );
 };
 

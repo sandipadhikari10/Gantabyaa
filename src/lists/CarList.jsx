@@ -1,12 +1,10 @@
 import React, { useEffect } from 'react';
 import './CarList.css';
 import { Link } from 'react-router-dom';
-import carDataFromFile from './carData';
 
 
 const CarList = () => {
-  // Remove this carDataFromFile and use the fetched data from the API
-  const [carData, setCarData] = React.useState(carDataFromFile);
+  const [carData, setCarData] = React.useState([]);
   useEffect(() => {
     fetch("/api/vehicles?type=car")
       .then((response) => response.json())
