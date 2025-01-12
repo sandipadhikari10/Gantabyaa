@@ -91,7 +91,7 @@ function SignUp() {
           <div className="checkbox-field">
 
             <input type="checkbox" id="option1" /><br />
-            <label for="option1">I agree with privacy and policy</label>
+            <label htmlFor="option1">I agree with privacy and policy</label>
           </div>
 
           <button type="submit" className="signup-btn">

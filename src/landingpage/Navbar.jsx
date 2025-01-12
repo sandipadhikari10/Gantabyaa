@@ -24,7 +24,8 @@ const Navbar = () => {
   }
 
   useEffect(() => {
-    if (!session) {
+    const path = location.pathname
+    if (!session && path !== "/signup") {
       navigate('/login')
     }
   }, [session])
