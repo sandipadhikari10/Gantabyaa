@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams, useSearchParams } from "react-router-dom";
+import './BookConfirm.css';
 
 export default function BookConfirm() {
   const [bookingData, setBookingData] = useState();
@@ -18,7 +19,7 @@ export default function BookConfirm() {
 
   // verify if booking was a success, alert and show booked vehicles
   return (
-    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyItems: 'center', gap: '10px' }}>
+    <div className="div-container" style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyItems: 'center', gap: '10px' }}>
       <h1>Book Confirm</h1>
       {bookingData === null && <h2>Booking Failed</h2>}
       {bookingData === undefined && <h2>Checking...</h2>}

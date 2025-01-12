@@ -4,13 +4,13 @@ import Sidebar from "./Sidebar";
 
 const PostVehicle = () => {
   const [vehicleData, setVehicleData] = useState({
-    name: "Honda Shine",
-    type: "bike",
-    description: "This is a great bike",
-    pricePerDay: 1000,
-    modelYear: "2001",
-    fuelType: "petrol",
-    seatingCapacity: 2,
+    name: "",
+    type: "",
+    description: "",
+    pricePerDay: "",
+    modelYear: "",
+    fuelType: "",
+    seatingCapacity: "",
   });
 
   const handleInputChange = (e) => {
@@ -74,9 +74,9 @@ const PostVehicle = () => {
                 >
                   <option value="">Select</option>
                   <option value="bike">Bike</option>
-                  <option value="scooter">Scooter</option>
+                  
                   <option value="car">Car</option>
-                  <option value="jeep">Jeep</option>
+                 
                 </select>
               </div>
               <div className="form-group">

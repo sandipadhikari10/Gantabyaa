@@ -14,9 +14,14 @@
 
 
 .vehicle-image {
-  min-width: 600px;
+  min-width: 500px;
+  min-height: 400px;
   border-radius: 10px;
   margin-top: 40px;
+  margin-right: 100px;
+  
+  width: 250px;
+  height: 250px;
 }
 
 .vehicle-info{
