@@ -11,17 +11,11 @@ const PostVehicle = () => {
     modelYear: "2001",
     fuelType: "petrol",
     seatingCapacity: 2,
-    images: [],
   });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setVehicleData({ ...vehicleData, [name]: value });
-  };
-
-  const handleFileChange = (e) => {
-    const { files } = e.target;
-    setVehicleData({ ...vehicleData, images: [...files] });
   };
 
   const handleSubmit = (e) => {
@@ -34,13 +28,19 @@ const PostVehicle = () => {
     formData.append("modelYear", vehicleData.modelYear);
     formData.append("fuelType", vehicleData.fuelType);
     formData.append("seatingCapacity", vehicleData.seatingCapacity);
-    formData.append("images", vehicleData.images);
+    const images = e.target.images.files;
+    for (let i = 0; i < images.length; i++) {
+      formData.append("images", images[i]);
+    }
     fetch("/api/admin/vehicle", {
       method: "POST",
       body: formData,
     }).then((response) => {
-      console.log(response);
-      alert("Vehicle created successfully!");
+      if (response.ok) {
+        alert("Vehicle created successfully!");
+      } else {
+        alert("Error creating vehicle!");
+      }
     })
   };
 
@@ -141,7 +141,7 @@ const PostVehicle = () => {
 
               <div className="form-group">
                 <label>Image </label>
-                <input type="file" name="images" multiple onChange={handleFileChange} />
+                <input type="file" name="images" multiple />
               </div>
 
             </div>

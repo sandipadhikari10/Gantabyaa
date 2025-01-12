@@ -25,7 +25,7 @@ const FinalBikeList = () => {
           {!!bikeData.length ? bikeData.map((bike) => (
             <div key={bike.id} className="bike-card">
               <Link to={`/vehicle/${bike._id}`} className='info'>
-                <img src={bike.image} alt={bike.name} className="bike-image" />
+                <img src={bike.images[0]} alt={bike.name} className="bike-image" />
                 <h3 className='bikeName'>{bike.name}</h3>
                 <div className="bike-details">
                   <div className='bikedetails-show'>
