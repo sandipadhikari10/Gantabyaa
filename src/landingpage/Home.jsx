@@ -6,6 +6,8 @@ import "./Home.css";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { FaSearch } from "react-icons/fa";
+
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
 import begnas from "../assets/places/begnas.jpg";
@@ -74,7 +76,7 @@ const Home = () => {
           </div>
 
           {/* Search Form */}
-          <div className="search-form">
+          {/* <div className="search-form">
             <div className="form-group">
               <label>Location</label>
               <select>
@@ -96,7 +98,7 @@ const Home = () => {
               />
             </div>
             <button className="search-btn">Search Vehicle</button>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="destination-slider">

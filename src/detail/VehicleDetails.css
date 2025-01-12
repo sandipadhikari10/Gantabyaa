@@ -77,8 +77,10 @@
 
 @media (max-width: 768px) {
   .vehicle-detail-container {
-    margin: 10px; /* Reduce margin */
-    padding: 15px; /* Reduce padding */
+    margin: 20px; /* Reduce margin */
+    padding: 15px; 
+    /* Reduce padding */
+  
   }
 
   .detail-header {

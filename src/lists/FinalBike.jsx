@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './FinalBike.css';
 import { Link } from "react-router-dom";
+import { FaSearch } from "react-icons/fa";
+
 
 const FinalBikeList = () => {
   const [bikeData, setBikeData] = useState([]);
@@ -14,10 +16,10 @@ const FinalBikeList = () => {
 
   return (
     <>
-      <div style={{ padding: "100px", display: 'flex', flexDirection: 'column' }}>
+      <div style={{ padding: "90px", display: 'flex', flexDirection: 'column' }}>
         <div style={{ width: '100%', margin: '10px 0px' }}>
           Search:
-          <input type="string" value={searchQuery} style={{ width: '100%' }} onChange={e => setSearchQuery(e.currentTarget.value)} />
+          <input type="string" value={searchQuery} style={{ width: '100%' }} onChange={e => setSearchQuery(e.currentTarget.value)} placeholder='' />
         </div>
         <div className="bike-list" style={{ padding: "100px" }}>
           {!!bikeData.length ? bikeData.map((bike) => (

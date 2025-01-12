@@ -67,7 +67,7 @@ body {
   }
   
   .bike-price {
-    font-size: 1.2em;
+    font-size: 1.1em;
     
   
     color: #333;
@@ -75,7 +75,7 @@ body {
     margin-left: 160px;
     
     background-color: hsl(0, 2%, 92%);
-    border-radius: 40px;
+    border-radius: 20px;
     padding: 5px;
     
    

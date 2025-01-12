@@ -65,7 +65,7 @@ const Navbar = () => {
               <li className="nav-item"><Link className="nav-link" to="/bookings">My Bookings</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/aboutus">About us</Link></li>
               {!session && <li className="nav-item"><Link className="nav-link" to="/login">Login</Link></li>}
-              {session && <li className="nav-item"><button className="nav-link" onClick={handleLogout}>Logout</button></li>}
+              {session && <li className="nav-item"><button className="nav-linklogout" onClick={handleLogout}>Logout</button></li>}
             </ul>
           </div>
         </nav>

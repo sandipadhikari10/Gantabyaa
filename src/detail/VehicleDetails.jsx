@@ -17,6 +17,7 @@ const VehicleDetail = () => {
       .then((response) => response.json())
       .then((data) => setVehicle(data));
   }, []);
+  console.log(vehicle)
 
   // Custom hook to handle map click events
   const MapEvents = () => {
@@ -45,66 +46,62 @@ const VehicleDetail = () => {
             src={vehicle.images[0]}
             alt={vehicle.name}
             className="vehicle-image"
+
           />
           <div className="vehicle-info">
             <h1>{vehicle.name}</h1>
-            <p>{vehicle.type}</p>
+            <h2>Vehicle Detail</h2>
             <table>
               <tbody>
                 {isBike ? (
                   // Bike-specific details
                   <>
+                    
                     <tr>
-                      <td>Engine Capacity:</td>
-                      <td>{vehicle.details?.engine}</td>
+                      <td>Fuel Type :</td>
+                      <td>{vehicle.fuelType}</td>
                     </tr>
                     <tr>
-                      <td>Tank Capacity:</td>
-                      <td>{vehicle.details?.tank}</td>
+                      <td>Seat Capacity :  </td>
+                      <td>{vehicle.seatingCapacity}</td>
+                    </tr>
+            
+                    <tr>
+                      <td>Model Year :</td>
+                      <td>{vehicle.modelYear}</td>
                     </tr>
                     <tr>
-                      <td>Mileage:</td>
-                      <td>{vehicle.details?.mileage}</td>
+                      <td>Price PerDay :</td>
+                      <td>Rs {vehicle.pricePerDay}</td>
                     </tr>
                     <tr>
-                      <td>Gears:</td>
-                      <td>{vehicle.details?.gears}</td>
-                    </tr>
-                    <tr>
-                      <td>Brake:</td>
-                      <td>{vehicle.details?.brake}</td>
-                    </tr>
-                    <tr>
-                      <td>Insurance:</td>
-                      <td>{vehicle.details?.insurance}</td>
+                      <td>Bike Description :</td>
+                      <td>{vehicle.description}</td>
                     </tr>
                   </>
                 ) : (
                   // Car-specific details
                   <>
-                    <tr>
-                      <td>Engine Power:</td>
-                      <td>{vehicle.details?.engine || "N/A"}</td>
+                 <tr>
+                      <td>Fuel Type :</td>
+                      <td>{vehicle.fuelType}</td>
                     </tr>
                     <tr>
-                      <td>Seating Capacity:</td>
-                      <td>{vehicle.details?.seats || "N/A"}</td>
+                      <td>Seat Capacity :  </td>
+                      <td>{vehicle.seatingCapacity}</td>
+                    </tr>
+            
+                    <tr>
+                      <td>Model Year :</td>
+                      <td>{vehicle.modelYear}</td>
                     </tr>
                     <tr>
-                      <td>Fuel Type:</td>
-                      <td>{vehicle.details?.fuelType || "N/A"}</td>
+                      <td>Price PerDay :</td>
+                      <td>Rs {vehicle.pricePerDay}</td>
                     </tr>
                     <tr>
-                      <td>Transmission:</td>
-                      <td>{vehicle.details?.transmission || "N/A"}</td>
-                    </tr>
-                    <tr>
-                      <td>Milleage:</td>
-                      <td>{vehicle.details?.mileage || "N/A"}</td>
-                    </tr>
-                    <tr>
-                      <td>Insurance:</td>
-                      <td>{vehicle.details?.insurance}</td>
+                      <td>Car Description :</td>
+                      <td>{vehicle.description}</td>
                     </tr>
                   </>
                 )}
@@ -112,11 +109,11 @@ const VehicleDetail = () => {
             </table>
             <form method="POST" action={`/api/vehicles/book/${id}`}>
               <div className="Location-details">
-                <h3>Select a Pickup Location</h3>
+                <h3>Select a DropOff Location</h3>
                 <MapContainer
                   center={[28.26689, 83.96851]} // Initial map center (Kathmandu)
                   zoom={10}
-                  style={{ width: "400px", height: "400px" }
+                  style={{ width: "350px", height: "350px" }
                   }
                 >
                   <TileLayer
