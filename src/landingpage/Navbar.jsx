@@ -3,6 +3,7 @@ import './Navbar.css';
 import { Link, useNavigate } from "react-router-dom"
 import { SessionContext } from "../contexts/session-context";
 
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => {
@@ -35,6 +36,7 @@ const Navbar = () => {
       <div className="navbar-container">
         <nav className="navbar">
 
+   
           <div className="navbar-contact">
             <div>📞 061 591363</div>
             <div className="mailto">

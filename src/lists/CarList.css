@@ -65,10 +65,18 @@ body {
     
 
   }
+  .cardetails-show{
+    padding: 5px;
+    width: 100%;
+   
+    overflow: hidden;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+
+  }
   
   .car-price {
     
-    font-size: 1.1em;
+    font-size: 1em;
     
    
     color: #333;

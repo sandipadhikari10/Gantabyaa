@@ -15,7 +15,7 @@ const CarList = () => {
 
   return (
     <>
-      <div style={{ padding: "100px", display: 'flex', flexDirection: 'column' }}>
+      <div style={{ padding: "90px", display: 'flex', flexDirection: 'column' }}>
         <div style={{ width: '100%', margin: '10px 0px' }}>
           Search:
           <input type="string" value={searchQuery} style={{ width: '100%' }} onChange={e => setSearchQuery(e.currentTarget.value)} />
@@ -28,10 +28,11 @@ const CarList = () => {
                 <h3 className='carName'>{car.name}</h3>
                 <div className="car-details">
                   <div className='cardetails-show'>
-                    <div><p>Free Cancelation</p>
-                      <p>Instant Booking</p></div>
+                  <div><p>{car.description}</p>
+                </div>
+                   
                   </div>
-                  <div className="car-price">Rs. {car.price} per day</div>
+                  <div className="car-price">Rs. {car.pricePerDay} per day</div>
                 </div>
               </Link>
             </div>

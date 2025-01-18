@@ -2,6 +2,7 @@ import React from "react";
 import "./ManageBooking.css";
 import Sidebar from "./Sidebar";
 
+
 const ManageBooking = () => {
   const [bookings, setBookings] = React.useState();
   const [filter, setFilter] = React.useState('');
@@ -18,6 +19,8 @@ const ManageBooking = () => {
     setBookings(undefined)
     fetchBookings()
   }, [filter]);
+  console.log(bookings)
+ 
 
   function handleUnbook(id) {
     fetch(`/api/admin/booking/${id}/unbook`, {
@@ -55,7 +58,7 @@ const ManageBooking = () => {
             {bookings.map((booking) => (
               <tr key={booking._id}>
                 <td>{booking.user.name}</td>
-                <td>{booking.vehicle.name}</td>
+                <td>{booking.vehicle?.name}</td>
                 <td>{booking.from}</td>
                 <td>{booking.to}</td>
                 <td>{booking.status}</td>

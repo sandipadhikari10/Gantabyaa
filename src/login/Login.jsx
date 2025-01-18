@@ -44,6 +44,8 @@ const Login = () => {
   return (
     <div className="login-container">
       <div className="login-box">
+      <h1 className='welcome-font'>Welcome!</h1>
+      <h3 className='welcome-font'>Login to your account</h3>
         <form className='form-login' method="post" onSubmit={handleSubmit}>
           <div className="input-group">
             <input className='input-name' type="text" name="email" placeholder="Email or phone number" required defaultValue={"macpokhara2@gmail.com"} />

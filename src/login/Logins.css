@@ -6,6 +6,10 @@ body {
   padding: 0;
   font-family: 'Poppins', sans-serif;
 }
+.welcome-font{
+  color: #333;
+
+}
 
 /* Center the form */
 .login-container {

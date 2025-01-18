@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from "react-leaflet";
 import { useParams } from "react-router-dom";
@@ -11,13 +10,27 @@ const VehicleDetail = () => {
   const { id } = useParams();
   const [vehicle, setVehicle] = useState();
   const [selectedLocation, setSelectedLocation] = useState(null);
+  const [driverOption, setDriverOption] = useState("no");
+  const [errorMessage, setErrorMessage] = useState(""); // Error state for location
+
+  const handleOptionChange = (event) => {
+    setDriverOption(event.target.value);
+  };
 
   useEffect(() => {
     fetch(`/api/vehicles/${id}`)
       .then((response) => response.json())
       .then((data) => setVehicle(data));
-  }, []);
-  console.log(vehicle)
+  }, [id]);
+
+  const handleSubmit = (event) => {
+    if (!selectedLocation) {
+      event.preventDefault();
+      setErrorMessage("Please select a location on the map."); // Set error message
+    } else {
+      setErrorMessage(""); // Clear error message if location is selected
+    }
+  };
 
   // Custom hook to handle map click events
   const MapEvents = () => {
@@ -29,6 +42,7 @@ const VehicleDetail = () => {
     });
     return null;
   };
+  
 
   const isBike = vehicle?.type === "bike";
 
@@ -36,6 +50,7 @@ const VehicleDetail = () => {
     return <p>Vehicle not found!</p>;
   } else if (vehicle === undefined) {
     return <p>Fetching vehicle data....</p>;
+
   }
 
   return (
@@ -46,75 +61,73 @@ const VehicleDetail = () => {
             src={vehicle.images[0]}
             alt={vehicle.name}
             className="vehicle-image"
-
           />
           <div className="vehicle-info">
             <h1>{vehicle.name}</h1>
             <h2>Vehicle Detail</h2>
-            <table>
+            <h2 className="vehicle-detail-heading">Vehicle Detail</h2>
+            <table className="vehicle-detail-table">
               <tbody>
                 {isBike ? (
-                  // Bike-specific details
                   <>
-                    
                     <tr>
-                      <td>Fuel Type :</td>
-                      <td>{vehicle.fuelType}</td>
+                      <td className="label">Fuel Type:</td>
+                      <td className="value">{vehicle.fuelType}</td>
                     </tr>
                     <tr>
-                      <td>Seat Capacity :  </td>
-                      <td>{vehicle.seatingCapacity}</td>
-                    </tr>
-            
-                    <tr>
-                      <td>Model Year :</td>
-                      <td>{vehicle.modelYear}</td>
+                      <td className="label">Seat Capacity:</td>
+                      <td className="value">{vehicle.seatingCapacity}</td>
                     </tr>
                     <tr>
-                      <td>Price PerDay :</td>
-                      <td>Rs {vehicle.pricePerDay}</td>
+                      <td className="label">Model Year:</td>
+                      <td className="value">{vehicle.modelYear}</td>
                     </tr>
                     <tr>
-                      <td>Bike Description :</td>
-                      <td>{vehicle.description}</td>
+                      <td className="label">Price Per Day:</td>
+                      <td className="value">Rs {vehicle.pricePerDay}</td>
+                    </tr>
+                    <tr>
+                      <td className="label">Bike Description:</td>
+                      <td className="value">{vehicle.description}</td>
                     </tr>
                   </>
                 ) : (
-                  // Car-specific details
                   <>
-                 <tr>
-                      <td>Fuel Type :</td>
-                      <td>{vehicle.fuelType}</td>
+                    <tr>
+                      <td className="label">Fuel Type:</td>
+                      <td className="value">{vehicle.fuelType}</td>
                     </tr>
                     <tr>
-                      <td>Seat Capacity :  </td>
-                      <td>{vehicle.seatingCapacity}</td>
-                    </tr>
-            
-                    <tr>
-                      <td>Model Year :</td>
-                      <td>{vehicle.modelYear}</td>
+                      <td className="label">Seat Capacity:</td>
+                      <td className="value">{vehicle.seatingCapacity}</td>
                     </tr>
                     <tr>
-                      <td>Price PerDay :</td>
-                      <td>Rs {vehicle.pricePerDay}</td>
+                      <td className="label">Model Year:</td>
+                      <td className="value">{vehicle.modelYear}</td>
                     </tr>
                     <tr>
-                      <td>Car Description :</td>
-                      <td>{vehicle.description}</td>
+                      <td className="label">Price Per Day:</td>
+                      <td className="value">Rs {vehicle.pricePerDay}</td>
+                    </tr>
+                    <tr>
+                      <td className="label">Car Description:</td>
+                      <td className="value">{vehicle.description}</td>
                     </tr>
                   </>
                 )}
               </tbody>
             </table>
-            <form method="POST" action={`/api/vehicles/book/${id}`}>
+            <form
+              method="POST"
+              action={`/api/vehicles/book/${id}`}
+              onSubmit={handleSubmit}
+            >
               <div className="Location-details">
-                <h3>Select a DropOff Location</h3>
+                <h3>Select your Location</h3>
                 <MapContainer
-                  center={[28.26689, 83.96851]} // Initial map center (Kathmandu)
-                  zoom={10}
-                  style={{ width: "350px", height: "350px" }
-                  }
+                  center={[28.2238, 83.98786]}
+                  zoom={13}
+                  style={{ width: "350px", height: "350px" }}
                 >
                   <TileLayer
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -139,25 +152,65 @@ const VehicleDetail = () => {
                     </Marker>
                   )}
                 </MapContainer>
-                <input type="string" name="pickupCoords" hidden value={selectedLocation ? JSON.stringify(selectedLocation) : undefined} required />
-                <input type="date" name="from" placeholder="Pick Up Date" required/>
-                <input type="date" name="to" placeholder="Drop Off Date" required/>
+                {errorMessage && <div className="error-message">{errorMessage}</div>} {/* Error message display */}
+                <input
+                  type="string"
+                  name="pickupCoords"
+                  hidden
+                  value={selectedLocation ? JSON.stringify(selectedLocation) : ""}
+                  required
+                />
+                <div className="date-picker-container">
+                  <div className="date-field">
+                    <label htmlFor="from-date" className="date-label">From:</label>
+                    <input
+                      type="date"
+                      id="from-date"
+                      name="from"
+                      placeholder="From Date"
+                      required
+                      min={new Date().toISOString().split("T")[0]}
+                    />
+                  </div>
+                  <div className="date-field">
+                    <label htmlFor="to-date" className="date-label">To:</label>
+                    <input
+                      type="date"
+                      id="to-date"
+                      name="to"
+                      placeholder="To Date"
+                      required
+                      min={new Date().toISOString().split("T")[0]}
+                    />
+                  </div>
+                </div>
+                <h3>Do you want a driver?</h3>
+                <div className="driver-option-container">
+                  <label className={`driver-option ${driverOption === "yes" ? "active" : ""}`}>
+                    <input
+                      type="radio"
+                      value="yes"
+                      checked={driverOption === "yes"}
+                      onChange={handleOptionChange}
+                    />
+                    Yes
+                  </label>
+                  <label className={`driver-option ${driverOption === "no" ? "active" : ""}`}>
+                    <input
+                      type="radio"
+                      value="no"
+                      checked={driverOption === "no"}
+                      onChange={handleOptionChange}
+                    />
+                    No
+                  </label>
+                </div>
                 <button className="pay-btn">Book Now</button>
               </div>
             </form>
           </div>
         </div>
       </div>
-
-      <h2 className="second-item">Corresponding Vehicles</h2>
-      <p className="second-para">
-        We understand if this vehicle isn't the perfect fit. You're more than
-        welcome to browse and select another option that better suits your
-        journey.
-      </p>
-
-      <FinalBikeList />
-      <CarList />
     </>
   );
 };

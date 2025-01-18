@@ -29,10 +29,9 @@ const FinalBikeList = () => {
                 <h3 className='bikeName'>{bike.name}</h3>
                 <div className="bike-details">
                   <div className='bikedetails-show'>
-                    <div><p>Free Cancelation</p>
-                      <p>Instant Booking</p></div>
-                    <div><p>{bike.description}</p>
-                      <p>{bike.type}</p></div>
+                    
+                    <p>{bike.description}</p>
+                   
                   </div>
 
                   <div className="bike-price">Rs. {bike.pricePerDay} per day</div>
