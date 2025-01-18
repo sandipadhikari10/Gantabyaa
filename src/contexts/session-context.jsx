@@ -18,11 +18,23 @@ export function SessionProvider({ children }) {
     fetchSessionData()
   }, [])
 
+  function handleLogout() {
+    fetch('/api/auth/logout', {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then(() => setSession(null))
+      .then(navigate('/login'))
+  }
+
 
   return <SessionContext.Provider value={{
     removeSession: () => setSession(null),
     revalidateSession: () => fetchSessionData(),
-    session
+    session,
+    logout: handleLogout
   }}>
     {children}
   </SessionContext.Provider >

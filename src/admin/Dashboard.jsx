@@ -1,11 +1,20 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./Dashboard.css";
 import "./Sidebar.css";
 import Sidebar from "./Sidebar";
+import { SessionContext } from '../contexts/session-context'
 
 const Dashboard = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const { session, logout } = useContext(SessionContext)
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (!session) {
+      navigate('/login')
+    }
+  }, [session])
 
   const dashboardData = [
     { title: "Reg Users", count: 5, path: "/manage-booking" },
@@ -26,10 +35,6 @@ const Dashboard = () => {
   ];
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
-  };
-
-  const handleLogout = () => {
-    alert("Logging Out");
   };
 
   return (
@@ -53,7 +58,7 @@ const Dashboard = () => {
                     >
                       My Account
                     </div>
-                    <div className="dropdown-item" onClick={handleLogout}>
+                    <div className="dropdown-item" onClick={logout}>
                       Logout
                     </div>
                   </div>
