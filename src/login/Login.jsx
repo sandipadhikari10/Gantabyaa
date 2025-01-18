@@ -11,12 +11,15 @@ const Login = () => {
 
   useEffect(() => {
     if (session) {
-      navigate('/bikes')
+      if (session.role === "admin") {
+        navigate('/admin')
+      } else {
+        navigate('/bikes')
+      }
     }
   }, [session])
 
   function handleSubmit(event) {
-    console.log(event.target);
     event.preventDefault();
 
     const formData = new FormData(event.target);
@@ -34,7 +37,6 @@ const Login = () => {
     }).then(async (response) => {
       if (response.ok) {
         revalidateSession()
-        navigate('/bikes')
       } else {
         alert("Login failed!");
       }

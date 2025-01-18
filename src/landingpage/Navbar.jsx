@@ -10,18 +10,7 @@ const Navbar = () => {
   }
   const navigate = useNavigate();
 
-  const { session, removeSession } = useContext(SessionContext);
-
-  function handleLogout() {
-    fetch('/api/auth/logout', {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then(removeSession)
-      .then(navigate('/login'))
-  }
+  const { session, logout } = useContext(SessionContext);
 
   useEffect(() => {
     const path = location.pathname
@@ -66,7 +55,7 @@ const Navbar = () => {
               <li className="nav-item"><Link className="nav-link" to="/bookings">My Bookings</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/aboutus">About us</Link></li>
               {!session && <li className="nav-item"><Link className="nav-link" to="/login">Login</Link></li>}
-              {session && <li className="nav-item"><button className="nav-linklogout" onClick={handleLogout}>Logout</button></li>}
+              {session && <li className="nav-item"><button className="nav-linklogout" onClick={logout}>Logout</button></li>}
             </ul>
           </div>
         </nav>
