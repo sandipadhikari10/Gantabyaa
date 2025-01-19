@@ -55,7 +55,7 @@ const ManageBooking = () => {
             </tr>
           </thead>
           <tbody>
-            {bookings.map((booking) => (
+            {bookings?.map((booking) => (
               <tr key={booking._id}>
                 <td>{booking.user.name}</td>
                 <td>{booking.vehicle?.name}</td>

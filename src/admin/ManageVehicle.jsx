@@ -4,9 +4,13 @@ import Sidebar from "./Sidebar";
 
 const ManageVehicle = () => {
   const [vehicles, setVehicles] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const vehiclesPerPage = 10; // Number of vehicles to show per page
 
   useEffect(() => {
-    fetch("/api/admin/vehicle").then((response) => response.json()).then((data) => setVehicles(data));
+    fetch("/api/admin/vehicle")
+      .then((response) => response.json())
+      .then((data) => setVehicles(data));
   }, []);
 
   const handleEdit = (id) => {
@@ -29,6 +33,12 @@ const ManageVehicle = () => {
     }
   };
 
+  // Pagination calculations
+  const indexOfLastVehicle = currentPage * vehiclesPerPage;
+  const indexOfFirstVehicle = indexOfLastVehicle - vehiclesPerPage;
+  const currentVehicles = vehicles.slice(indexOfFirstVehicle, indexOfLastVehicle);
+  const totalPages = Math.ceil(vehicles.length / vehiclesPerPage);
+
   return (
     <div className="main-managecontainer">
       <Sidebar />
@@ -42,26 +52,32 @@ const ManageVehicle = () => {
                 <th>#</th>
                 <th>Vehicle Title</th>
                 <th>Brand</th>
-                <th>Price Per day</th>
+                <th>Price Per Day</th>
                 <th>Fuel Type</th>
                 <th>Model Year</th>
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
-              {vehicles.map((vehicle, index) => (
+              {currentVehicles.map((vehicle, index) => (
                 <tr key={vehicle._id}>
-                  <td>{index + 1}</td>
+                  <td>{indexOfFirstVehicle + index + 1}</td>
                   <td>{vehicle.name}</td>
                   <td>{vehicle.type}</td>
                   <td>{vehicle.pricePerDay}</td>
                   <td>{vehicle.fuelType}</td>
                   <td>{vehicle.modelYear}</td>
                   <td>
-                    <button onClick={() => handleEdit(vehicle._id)} className="edit-btn">
+                    <button
+                      onClick={() => handleEdit(vehicle._id)}
+                      className="edit-btn"
+                    >
                       ✎
                     </button>
-                    <button onClick={() => handleDelete(vehicle._id)} className="delete-btn">
+                    <button
+                      onClick={() => handleDelete(vehicle._id)}
+                      className="delete-btn"
+                    >
                       ✖
                     </button>
                   </td>
@@ -69,6 +85,19 @@ const ManageVehicle = () => {
               ))}
             </tbody>
           </table>
+          <div className="pagination">
+            {Array.from({ length: totalPages }, (_, index) => (
+              <button
+                key={index}
+                className={`pagination-btn ${
+                  currentPage === index + 1 ? "active" : ""
+                }`}
+                onClick={() => setCurrentPage(index + 1)}
+              >
+                {index + 1}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
     </div>
